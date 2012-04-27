@@ -11,5 +11,5 @@ The following packages are essential:
 
 Reference
 ====
-http://snippets.dzone.com/posts/show/341
-http://linuxpoison.blogspot.com/2008/07/working-with-tar-with-encryption.html
+   * http://snippets.dzone.com/posts/show/341
+   * http://linuxpoison.blogspot.com/2008/07/working-with-tar-with-encryption.html
