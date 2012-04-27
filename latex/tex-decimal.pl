@@ -1,5 +1,12 @@
 #!/usr/bin/perl 
 
+#Eliminate extra digits after decimal point
+#by string matching and substituting. 
+#
+#I'm not sure whether tex itself has such function.
+#Say by supplying one paramter in the tabular 
+#environment, rather than facilating scripts. 
+
 my $usage = "$0 {digits}" ;
 
 #filter out extra decimal digits
