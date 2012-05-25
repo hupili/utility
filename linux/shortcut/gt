@@ -1,0 +1,17 @@
+#!/bin/bash
+#hupili
+#20111111
+#short for Gnome-Terminal
+
+echo "start new gnome-terminal in a new window"
+echo "usage: $0 {working-dir}" 
+
+if [[ $# == 1 ]] ; then 
+	path=$1
+	gnome-terminal --working-directory $path
+	exit $?
+else 
+	gnome-terminal
+	exit $?
+fi
+

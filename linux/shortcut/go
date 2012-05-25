@@ -1,0 +1,18 @@
+#!/bin/bash
+#hupili
+#20110819
+#this command is a simple alias for gnome-open
+#the name "go" is simple and make sense. 
+#if you want to open directory, you can try nautilus
+
+if [[ $# == 1 ]] ; then 
+	file=$1
+else 
+	echo "open file in gnome with default application"
+	echo "usage: $0 {file}" 
+	exit 255 
+fi
+
+gnome-open "$file"
+
+exit $?
