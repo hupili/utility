@@ -1,0 +1,32 @@
+"3.2 (created: 2011/06/03 11:51:34)
+
+noremap <C-p> <S-Esc><C-p><S-Esc>
+"cnoremap <C-x> <S-Esc><C-x><S-Esc>
+cnoremap <C-u> <S-Esc><C-u><S-Esc>
+command! noimg set! permissions.default.image=2
+command! nojs set! javascript.enabled=false
+command! ysimg set! permissions.default.image=1
+command! ysjs set! javascript.enabled=true
+inoremap <C-a> <S-Esc><C-a><S-Esc>
+"inoremap <C-x> <S-Esc><C-x><S-Esc>
+inoremap <C-z> <S-Esc><C-z><S-Esc>
+map <lt> gT
+map > gt
+noremap A <Nop>
+noremap a <Nop>
+noremap <C-o> <Nop>
+noremap <C-i> <Nop>
+noremap J <C-d>
+noremap K <C-u>
+noremap j 3j
+noremap k 3k
+noremap h 3h
+noremap l 3l
+noremap <C-s> <C-c>
+noremap <C-a> <S-Esc><C-a><S-Esc>
+set nextpattern=s*��һҳ|��һ��|��ҳs*,bnextb,^>$,^(>>|??|?)$,^(>|?),(>|?)$,bmoreb
+set previouspattern=s*��һҳ|��һ��|��ҳs*,bprev|previousb,^<$,^(<<|??|?)$,^(<|?),(<|?)$
+set "titlestring=Mozilla Firefox"
+source! /home/hpl/.vimperatorrc.local
+
+" vim: set ft=vimperator:
