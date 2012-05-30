@@ -27,6 +27,6 @@ noremap <C-a> <S-Esc><C-a><S-Esc>
 set nextpattern=s*��һҳ|��һ��|��ҳs*,bnextb,^>$,^(>>|??|?)$,^(>|?),(>|?)$,bmoreb
 set previouspattern=s*��һҳ|��һ��|��ҳs*,bprev|previousb,^<$,^(<<|??|?)$,^(<|?),(<|?)$
 set "titlestring=Mozilla Firefox"
-source! /home/hpl/.vimperatorrc.local
+"source! /home/hpl/.vimperatorrc.local
 
 " vim: set ft=vimperator:
