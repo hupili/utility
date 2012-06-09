@@ -128,4 +128,4 @@ export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;33m'
 
 #my own paths, others may want to delete this line=======
-export PATH="$PATH:/home/hpl/utils"
+export PATH="$PATH:$HOME/utils"
