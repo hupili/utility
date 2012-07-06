@@ -12,11 +12,17 @@ filetype indent on
 colorscheme evening 
 
 " following lines define my own hotkeys
-map! <F6> <ESC>:w<cr>
-map <F6> <ESC>:w<cr>
-map <F7> <ESC>:!make<cr>
-map <F8> <ESC>:!./Run<cr>
-map <F9> <ESC>:!./Check<cr>
+" ==== staged for deletion
+" They are the old commands I used when I first 
+" came to work with Linux. 
+" They are rarely used now
+" Those keys are occupied by my spelling check shortcuts
+" map! <F6> <ESC>:w<cr>
+" map <F6> <ESC>:w<cr>
+" map <F7> <ESC>:!make<cr>
+" map <F8> <ESC>:!./Run<cr>
+" map <F9> <ESC>:!./Check<cr>
+" ==== end of staged for deletion
 map <F11> <ESC>gT<cr>
 map <F12> <ESC>gt<cr>
 map! <F11> <ESC>gT<cr>
@@ -35,6 +41,12 @@ set fileencodings=utf8,gbk,big5
 if (match(system("test -f spell.enable; echo $?"), "0") != -1)
 	set spell
 	set spf=spell.utf8.add
+	map <F6> <ESC>[s
+	map <F7> <ESC>]s
+	map <F8> <ESC>zg
+	map! <F6> <ESC>[s
+	map! <F7> <ESC>]s
+	map! <F8> <ESC>zg
 endif
 
 
