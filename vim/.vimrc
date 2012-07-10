@@ -1,14 +1,27 @@
+"HPL's vimrc file
+"Edited for version 7.3.429
+
 syntax on
 set nu
 set ai
 set ci
-set noet       " no expand tab
-set sw=4       " shift width
-set ts=4       " tab stop
-set sts=4      " soft tab stop
+set shiftwidth=4       " shift width
+set tabstop=4       " tab stop
+set softtabstop=4      " soft tab stop
 set fdm=indent " vim will fold the codes according to indent
 set mouse=   " avoid entering visual mode by mouse operation
+set smarttab
+filetype on 
 filetype indent on
+filetype plugin on
+"Generally, I don't expand tab.
+"Like 'Makefile' requires command to begin
+"with a tab. 
+"For situations where tab expansion is needed
+"I put them into filetype plugins. 
+"See '.vim/after/ftplugin'
+set noet       " no expand tab
+
 colorscheme evening 
 
 " following lines define my own hotkeys
@@ -27,6 +40,12 @@ map <F11> <ESC>gT<cr>
 map <F12> <ESC>gt<cr>
 map! <F11> <ESC>gT<cr>
 map! <F12> <ESC>gt<cr>
+
+" * C-] uses ':tag' by default
+" * g C-] uses ':tselect' by default 
+"   and uses ':tag' if there's ambiguities
+" * This makes C-] a better shortcut 
+noremap <C-]> g<C-]>
 
 " about encoding
 " set encoding=gbk
@@ -150,3 +169,4 @@ if !exists(":DiffOrig")
   command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
 		  \ | wincmd p | diffthis
 endif
+
