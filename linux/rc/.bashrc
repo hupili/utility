@@ -96,7 +96,6 @@ alias crontab='crontab -i'
 alias grep='grep --color'                     # show differences in colour
 alias tailf='tail -f'
 alias ms='chmod 744'
-
 # Some shortcuts for different directory listings
 alias ls='ls -hF --color=tty'                 # classify files in colour
 alias ll='ls -l'                              # long list
@@ -105,6 +104,7 @@ alias sl='ls'
 # alias vdir='ls --color=auto --format=long'
 # alias la='ls -A'                              # all but . and ..
 # alias l='ls -CF'                              #
+alias rl='readlink -f'
 
 # Functions
 # #########
@@ -127,5 +127,4 @@ export LESS_TERMCAP_so=$'\E[01;44;33m'
 export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;33m'
 
-#my own paths, others may want to delete this line=======
 export PATH="$PATH:$HOME/utils"
