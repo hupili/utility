@@ -27,6 +27,10 @@ for my $repo(keys %h_bundles){
 		`git clone $link $repo` ;
 		print "\t[end of installation]\n" ;
 	}
+	if ( -d "$repo/doc/" ){
+		print "\t[generate help files]\n" ;
+		system qq(vim -c 'helptags $repo/doc/' -c 'q') ;
+	}
 }
 
 exit 0 ;
