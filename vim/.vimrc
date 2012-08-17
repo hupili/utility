@@ -11,9 +11,17 @@ set softtabstop=4      " soft tab stop
 set fdm=indent " vim will fold the codes according to indent
 set mouse=   " avoid entering visual mode by mouse operation
 set smarttab
+
+" ============ File type managenment ======
 filetype on 
 filetype indent on
 filetype plugin on
+au BufNewFile,BufRead *.json set filetype=json
+
+" === https://github.com/tpope/vim-pathogen
+" for easier plugin installation
+call pathogen#infect()
+
 "Generally, I don't expand tab.
 "Like 'Makefile' requires command to begin
 "with a tab. 
@@ -23,6 +31,13 @@ filetype plugin on
 set noet       " no expand tab
 
 colorscheme evening 
+
+" ==== NERDTree settings
+let NERDTreeChDirMode=2 "CWD of vim is changed by NerdTree when the tree root is changed
+let NERDTreeIgnore=['\.vim$', '\~$', '\.pyc$', '\.swp$']
+let NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$',  '\~$']
+let NERDTreeShowBookmarks=1
+map <F3> :NERDTreeToggle<CR>
 
 " following lines define my own hotkeys
 " ==== staged for deletion
@@ -69,6 +84,8 @@ if (match(system("test -f spell.enable; echo $?"), "0") != -1)
 endif
 
 
+"================ defaults after installation ========
+
 " An example for a vimrc file.
 "
 " Maintainer:	Bram Moolenaar <Bram@vim.org>
@@ -101,9 +118,7 @@ set history=50		" keep 50 lines of command line history
 set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
 set incsearch		" do incremental searching
-"by lnzju@baidu.com
 set cindent
-"lnzju end
 
 " For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
 " let &guioptions = substitute(&guioptions, "t", "", "g")
