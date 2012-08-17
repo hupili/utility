@@ -19,6 +19,7 @@ alias grep='grep --color'                       # show differences in colour
 alias tailf='tail -f'
 alias ms='chmod 744'
 alias rl='readlink -f'
+alias vless="$HOME/.vim/macros/less.sh"
 
 # The console style
 PS1='\[\e[32m\]\u@\h \[\e[33m\]${PWD/????????????????????????????*/...${PWD:${#PWD}-25}}\[\e[0m\]\n\$'
