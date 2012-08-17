@@ -1,30 +1,68 @@
 #!/usr/bin/perl -w
+#Author: hupili
+#Initiate Date: 20120817
+#
+#This script allows for flexible configuration of 
+#Vim pakcages. It downloads the package automatically,
+#install it and perform required post-processing. 
+#
+#Prerequisites:
+#   * vim-pathogen is installed. 
+#     https://github.com/tpope/vim-pathogen/
+#   * Place this script in its default
+#     'bundle' directory. 
+#
+#Configure the %h_bundles variable accordingly. 
+#Format:
+#    "<tool>:<subdir>" => "<url>"
+#Supported <tool>'s are:
+#   * git : use git:// or https:// to clone repository. 
+#   * zip : a standard zip archive format of vim plugin.
+
 use strict ;
 
 my %h_bundles = (
 # snipmate: enable snippets completion using <tab>
-"vim-snipmate" => "git://github.com/garbas/vim-snipmate.git",
+"git:vim-snipmate" => "git://github.com/garbas/vim-snipmate.git",
 # snipmate dependencies
-"tlib_vim" => "https://github.com/tomtom/tlib_vim.git",
-"vim-addon-mw-utils" => "https://github.com/MarcWeber/vim-addon-mw-utils.git",
+"git:tlib_vim" => "https://github.com/tomtom/tlib_vim.git",
+"git:vim-addon-mw-utils" => "https://github.com/MarcWeber/vim-addon-mw-utils.git",
 # snippets repos:
-"snipmate-snippets" => "https://github.com/honza/snipmate-snippets.git",
-"snipmate-snippets-bib" => "https://github.com/rbonvall/snipmate-snippets-bib.git", 
+"git:snipmate-snippets" => "https://github.com/honza/snipmate-snippets.git",
+"git:snipmate-snippets-bib" => "https://github.com/rbonvall/snipmate-snippets-bib.git", 
 # vcscommand: Using version control tool inside vim
-"vcscommand" => "git://repo.or.cz/vcscommand",
+"git:vcscommand" => "git://repo.or.cz/vcscommand",
 # nerdtree: efficient project browsing
-"nerdtree" => "https://github.com/scrooloose/nerdtree.git", 
+"git:nerdtree" => "https://github.com/scrooloose/nerdtree.git", 
+# taglist: 
+"zip:taglist" => "http://vim.sourceforge.net/scripts/download_script.php?src_id=7701", 
 ) ;
 
-for my $repo(keys %h_bundles){
-	my $link = $h_bundles{$repo} ;	
+for my $plugin(keys %h_bundles){
+	my $link = $h_bundles{$plugin} ;	
+	my $repo = "" ;
+	my $tool = "" ;
+	if ( $plugin =~ /^(.+):(.+)$/ ){
+		$tool = $1 ;
+		$repo = $2 ;
+	}
 	print "Install:\n\trepo:$repo\n\tlink:$link\n" ;
 	if ( -e $repo ) {
 		print "\t[already installed]\n" ;
 	} else {
 		print "\t[start to install]\n" ;
 		`rm -rf $repo` ;
-		`git clone $link $repo` ;
+		if ( $tool eq "git" ) {
+			`git clone $link $repo` ;
+		}
+		elsif ( $tool eq "zip" ) {
+			`mkdir -p $repo` ;
+			`wget "$link" -O $repo/$repo.zip` ;
+			`cd $repo; unzip $repo.zip` ;
+		}
+		else {
+			print STDERR "unrecognized tool:$tool\n" ;
+		}
 		print "\t[end of installation]\n" ;
 	}
 	if ( -d "$repo/doc/" ){
