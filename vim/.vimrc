@@ -23,8 +23,7 @@ au BufNewFile,BufRead *.json set filetype=json
 call pathogen#infect()
 
 "Generally, I don't expand tab.
-"Like 'Makefile' requires command to begin
-"with a tab. 
+"Like 'Makefile' requires command to begin with a tab. 
 "For situations where tab expansion is needed
 "I put them into filetype plugins. 
 "See '.vim/after/ftplugin'
@@ -51,18 +50,7 @@ map <silent>,j <C-w>j
 map <silent>,k <C-w>k
 map <silent>,l <C-w>l
 
-" following lines define my own hotkeys
-" ==== staged for deletion
-" They are the old commands I used when I first 
-" came to work with Linux. 
-" They are rarely used now
-" Those keys are occupied by my spelling check shortcuts
-" map! <F6> <ESC>:w<cr>
-" map <F6> <ESC>:w<cr>
-" map <F7> <ESC>:!make<cr>
-" map <F8> <ESC>:!./Run<cr>
-" map <F9> <ESC>:!./Check<cr>
-" ==== end of staged for deletion
+" ==== Tab navigation shortcuts
 map <F11> <ESC>gT<cr>
 map <F12> <ESC>gt<cr>
 map! <F11> <ESC>gT<cr>
@@ -74,9 +62,7 @@ map! <F12> <ESC>gt<cr>
 " * This makes C-] a better shortcut 
 noremap <C-]> g<C-]>
 
-" about encoding
-" set encoding=gbk
-" set fileencoding=gbk
+" ==== about encoding
 set encoding=utf8
 set fileencoding=utf8
 set fileencodings=utf8,gbk,big5
