@@ -39,6 +39,18 @@ let NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$',  '\~$']
 let NERDTreeShowBookmarks=1
 map <F3> :NERDTreeToggle<CR>
 
+" ==== Taglist settings
+let Tlist_GainFocus_On_ToggleOpen=1 "auto locate cursor in Tlist window
+let Tlist_File_Fold_Auto_Close = 1  "close tag tree for inactive files
+let Tlist_Close_On_Select = 1       "close TL on select, use p if just view code but not exit
+map <F4> :TlistToggle<CR>
+
+" ==== penal moving shortcuts
+map <silent>,h <C-w>h
+map <silent>,j <C-w>j
+map <silent>,k <C-w>k
+map <silent>,l <C-w>l
+
 " following lines define my own hotkeys
 " ==== staged for deletion
 " They are the old commands I used when I first 
