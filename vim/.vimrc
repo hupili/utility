@@ -17,6 +17,7 @@ filetype on
 filetype indent on
 filetype plugin on
 au BufNewFile,BufRead *.json set filetype=json
+"au BufNewFile,BufRead *.md set filetype=markdown
 
 " === https://github.com/tpope/vim-pathogen
 " for easier plugin installation
@@ -43,6 +44,8 @@ let Tlist_GainFocus_On_ToggleOpen=1 "auto locate cursor in Tlist window
 let Tlist_File_Fold_Auto_Close = 1  "close tag tree for inactive files
 let Tlist_Close_On_Select = 1       "close TL on select, use p if just view code but not exit
 map <F4> :TlistToggle<CR>
+"let g:tlist_markdown_settings = 'markdown;h:heading1;h:heading2;h:heading3'
+let g:tlist_markdown_settings = 'markdown;h:Headlins'
 
 " ==== penal moving shortcuts
 map <silent>,h <C-w>h

@@ -36,6 +36,8 @@ my %h_bundles = (
 "git:nerdtree" => "https://github.com/scrooloose/nerdtree.git", 
 # taglist: 
 "zip:taglist" => "http://vim.sourceforge.net/scripts/download_script.php?src_id=7701", 
+# markdown:
+"git:markdown" => "https://github.com/tpope/vim-markdown.git",
 ) ;
 
 for my $plugin(keys %h_bundles){
