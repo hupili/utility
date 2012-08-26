@@ -48,7 +48,7 @@ map <F4> :TlistToggle<CR>
 "let g:tlist_markdown_settings = 'markdown;h:heading1;h:heading2;h:heading3'
 let g:tlist_markdown_settings = 'markdown;h:Headlins'
 let g:tlist_perl_settings = 'perl;s:Subroutines'
-let g:tlist_tex_settings = 'tex;s:Sections;l:Labels;r:Refs'
+let g:tlist_tex_settings = 'latex;s:Sections;l:Labels;r:Refs'
 "let g:tlist_latex_settings = 'latex;s:Sections;l:Labels;r:Refs'
 
 " ==== penal moving shortcuts
