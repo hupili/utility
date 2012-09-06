@@ -9,6 +9,13 @@
 # IERG5270 - 2011, one found that Tudou's official 
 # accelerator uses this property. They didn't have 
 # proprietary protocols to help their client users.
+#
+# In the recent test of format 'webm', this script 
+# shows inferior performance to direct wget download. 
+# For one thing, wget can keep 10M rate at most time. 
+# For another thing, intensive 'cat' operation (">>")
+# of curl output make disk IO a possible bottleneck. 
+# Just guess, no in depth study. 
 
 use strict;
 use warnings;
