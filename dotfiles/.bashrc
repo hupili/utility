@@ -17,7 +17,7 @@ alias sl='ls'                                   # avoid typo...
 # Other shortcuts
 alias grep='grep --color'                       # show differences in colour
 alias tailf='tail -f'
-alias ms='chmod 744'
+alias ms='chmod u+x'
 alias rl='readlink -f'
 alias vless="$HOME/.vim/macros/less.sh"
 
