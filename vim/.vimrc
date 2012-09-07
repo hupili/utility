@@ -13,13 +13,13 @@ set mouse=   " avoid entering visual mode by mouse operation
 set smarttab
 
 " disable beepings
-set vb=
+set vb t_vb=
+set noerrorbells
 " The above one works in my environment.
 " The followings are suggestions from the Internet.
 " Keep them here for future reference. 
-"set t_vb=
-"set noerrorbells 
-"set visualbells 
+" set t_vb=
+" set visualbells 
 
 " ============ File type managenment ======
 filetype on 
