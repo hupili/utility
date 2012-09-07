@@ -12,6 +12,15 @@ set fdm=indent " vim will fold the codes according to indent
 set mouse=   " avoid entering visual mode by mouse operation
 set smarttab
 
+" disable beepings
+set vb=
+" The above one works in my environment.
+" The followings are suggestions from the Internet.
+" Keep them here for future reference. 
+"set t_vb=
+"set noerrorbells 
+"set visualbells 
+
 " ============ File type managenment ======
 filetype on 
 filetype indent on
