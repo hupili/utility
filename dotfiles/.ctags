@@ -12,6 +12,10 @@
 --langmap=latex:.tex
 --regex-latex=/^\\part[[:space:]]*(\[[^]]*\])?[[:space:]]*\{([^}]+)\}/PART \2/s,part/
 --regex-latex=/^\\part[[:space:]]*\*[[:space:]]*\{([^}]+)\}/PART \1/s,part/
+--regex-latex=/^\\title\{/Title/s,title/
+--regex-latex=/^\\author\{/Author/s,author/
+--regex-latex=/^%mark (.*)/\1/m,mark/
+--regex-latex=/^\\begin\{abstract\}/Abstract/s,abstract/
 --regex-latex=/^\\chapter[[:space:]]*(\[[^]]*\])?[[:space:]]*\{([^}]+)\}/CHAP \2/s,chapter/
 --regex-latex=/^\\chapter[[:space:]]*\*[[:space:]]*\{([^}]+)\}/CHAP \1/s,chapter/
 --regex-latex=/^\\section[[:space:]]*(\[[^]]*\])?[[:space:]]*\{([^}]+)\}/\. \2/s,section/
