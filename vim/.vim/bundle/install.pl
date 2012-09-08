@@ -28,7 +28,8 @@ my %h_bundles = (
 "git:tlib_vim" => "https://github.com/tomtom/tlib_vim.git",
 "git:vim-addon-mw-utils" => "https://github.com/MarcWeber/vim-addon-mw-utils.git",
 # snippets repos:
-"git:snipmate-snippets" => "https://github.com/honza/snipmate-snippets.git",
+#"git:snipmate-snippets" => "https://github.com/honza/snipmate-snippets.git",
+"git:snipmate-snippets" => "https://github.com/hupili/snipmate-snippets.git",
 "git:snipmate-snippets-bib" => "https://github.com/rbonvall/snipmate-snippets-bib.git", 
 # vcscommand: Using version control tool inside vim
 "git:vcscommand" => "git://repo.or.cz/vcscommand",
