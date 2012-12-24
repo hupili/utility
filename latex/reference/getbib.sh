@@ -2,6 +2,13 @@
 
 #Get formatted reference from ".bib" database. 
 
+if [[ $# != 1 ]] ; then
+	echo "usage: $0 {bibkey}"
+	exit 0
+else
+	bibkey=$1
+fi
+
 dir=`dirname $0`
 #echo $dir
 #exit 0 
@@ -31,8 +38,8 @@ done
 #cp gen_bib_body.tex $tmp/gen_bib_body.tex
 #
 
-echo "\\cite{$1}" > $tmp/gen_bib_body.tex
-cat gen_bib_begin.tex $tmp/gen_bib_body.tex gen_bib_end.tex > $tmp/gen_bib.tex
+echo "\\cite{$bibkey}" > $tmp/gen_bib_body.tex
+cat $dir/gen_bib_begin.tex $tmp/gen_bib_body.tex $dir/gen_bib_end.tex > $tmp/gen_bib.tex
 
 cd $tmp
 latex gen_bib
@@ -40,7 +47,7 @@ bibtex gen_bib
 cd -
 
 #cp -f $tmp/gen_bib.bbl .
-rm -f gen_bib.bbl
+#rm -f gen_bib.bbl
 ##sed 's/\\end\{thebibliography\}//g' $tmp/gen_bib.bbl > gen_bib.bbl
 #sed 's/\\end{thebibliography}//g' $tmp/gen_bib.bbl > gen_bib.bbl
 ##cat manual_bib.tex >> gen_bib.bbl
