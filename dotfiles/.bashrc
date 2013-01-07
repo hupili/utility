@@ -21,6 +21,11 @@ alias ms='chmod u+x'
 alias rl='readlink -f'
 alias vless="$HOME/.vim/macros/less.sh"
 
+# Git shortcuts
+alias gita='git add'
+alias gitc='git commit'
+alias gits='git status'
+
 # The console style
 PS1='\[\e[32m\]\u@\h \[\e[33m\]${PWD/????????????????????????????*/...${PWD:${#PWD}-25}}\[\e[0m\]\n\$'
 
