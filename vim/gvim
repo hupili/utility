@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# GVIM is very slow if you start it directly. 
+# Workaround found at: 
+#   https://bugs.launchpad.net/ubuntu/+source/vim/+bug/972968
+#
+# My OS is Ubuntu 12.04.1 
+
+/usr/bin/gvim -f $* &
+
+exit 0 
