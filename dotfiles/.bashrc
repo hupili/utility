@@ -15,6 +15,7 @@ alias ll='ls -l'                                # long list
 alias sl='ls'                                   # avoid typo...
 
 # Other shortcuts
+alias file-grep='xargs grep -l'
 alias grep='grep --color'                       # show differences in colour
 alias tailf='tail -f'
 alias ms='chmod u+x'
