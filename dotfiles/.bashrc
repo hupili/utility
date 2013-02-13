@@ -50,3 +50,6 @@ export LESS_TERMCAP_us=$'\E[01;33m'
 
 # My own path
 export PATH="$PATH:$HOME/utils"
+if [[ -e "$HOME/.pathrc" ]]; then
+	. $HOME/.pathrc
+fi
