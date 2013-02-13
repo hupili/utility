@@ -64,9 +64,17 @@
   #Space: magic-space
 #$endif
 
-#===hpl====
+# === hpl ====
 
 set meta-flag on
 set convert-meta off
 set input-meta on
 set output-meta on
+
+# ==== shortcuts for history search ====
+# from: https://coderwall.com/p/oqtj8w
+
+"\e[A": history-search-backward
+"\e[B": history-search-forward
+set show-all-if-ambiguous on
+set completion-ignore-case on
