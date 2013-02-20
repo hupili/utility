@@ -3,9 +3,6 @@
 # To pick up the latest recommended .bashrc content,
 # look in /etc/defaults/etc/skel/.bashrc
 
-# Vi-mode: http://blog.sanctum.geek.nz/vi-mode-in-bash/ 
-set -o vi
-
 # Interactive operation; Keep safe!
 alias rm='rm -i'
 alias cp='cp -i'
