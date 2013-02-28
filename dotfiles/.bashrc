@@ -4,7 +4,7 @@
 # look in /etc/defaults/etc/skel/.bashrc
 
 # Vi-mode: http://blog.sanctum.geek.nz/vi-mode-in-bash/ 
-set -o vi
+# set -o vi
 
 # Interactive operation; Keep safe!
 alias rm='rm -i'
