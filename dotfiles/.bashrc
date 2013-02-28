@@ -3,19 +3,34 @@
 # To pick up the latest recommended .bashrc content,
 # look in /etc/defaults/etc/skel/.bashrc
 
+# Setting system flag for customized commands
+# Refs:
+#    * http://en.wikipedia.org/wiki/Uname
+if [[ `uname -s` == "Darwin" ]] ; then
+	_mac=1
+fi
+if [[ `uname -s` == "Linux" ]] ; then
+	_linux=1
+fi
+
 # Vi-mode: http://blog.sanctum.geek.nz/vi-mode-in-bash/ 
 # set -o vi
 
 # Interactive operation; Keep safe!
+alias rm='rm -i'
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
 alias crontab='crontab -i'
 
 # Some shortcuts for different directory listings
-alias ls='ls -h --color=tty'                    # classify files in colour
-alias ll='ls -l'                                # long list
-alias sl='ls'                                   # avoid typo...
+# classify files in colour
+test $_linux && alias ls='ls -h --color=tty'
+test $_mac && alias ls='ls -h -G'
+# long list
+alias ll='ls -l'
+# avoid typo...
+alias sl='ls'                                   
 
 # Other shortcuts
 alias file-grep='xargs grep -l'
