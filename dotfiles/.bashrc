@@ -86,3 +86,7 @@ export LC_TELEPHONE="en_US.UTF-8"
 export LC_MEASUREMENT="en_US.UTF-8"
 export LC_IDENTIFICATION="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
+
+# Launch MAC apps from command-line
+test $_mac && alias firefox="/Applications/Firefox.app/Contents/MacOS/firefox-bin"
+test $_mac && alias thunderbird="/Applications/Thunderbird.app/Contents/MacOS/thunderbird-bin"
