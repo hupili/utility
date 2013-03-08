@@ -26,8 +26,9 @@ alias crontab='crontab -i'
 
 # Some shortcuts for different directory listings
 # classify files in colour
-test $_linux && alias ls='ls -h --color=tty'
-test $_mac && alias ls='ls -h -G'
+#test $_linux && alias ls='ls -h --color=tty'
+#test $_mac && alias ls='ls -h -G'
+alias ls='ls -h --color=tty'
 # long list
 alias ll='ls -l'
 # avoid typo...
