@@ -8,6 +8,7 @@
 #    * http://en.wikipedia.org/wiki/Uname
 if [[ `uname -s` == "Darwin" ]] ; then
 	_mac=1
+	_unix=1
 fi
 if [[ `uname -s` == "Linux" ]] ; then
 	_linux=1
@@ -91,3 +92,6 @@ export LC_ALL="en_US.UTF-8"
 # Launch MAC apps from command-line
 test $_mac && alias firefox="/Applications/Firefox.app/Contents/MacOS/firefox-bin"
 test $_mac && alias thunderbird="/Applications/Thunderbird.app/Contents/MacOS/thunderbird-bin"
+
+# Redirect UNIX commands to GNU Linux commands
+test $_unix && test `which gdate` && alias date=gdate
