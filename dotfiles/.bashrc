@@ -94,4 +94,4 @@ test $_mac && alias firefox="/Applications/Firefox.app/Contents/MacOS/firefox-bi
 test $_mac && alias thunderbird="/Applications/Thunderbird.app/Contents/MacOS/thunderbird-bin"
 
 # Redirect UNIX commands to GNU Linux commands
-test $_unix && test `which gdate` && alias date=gdate
+#test $_unix && test `which gdate` && alias date=gdate
