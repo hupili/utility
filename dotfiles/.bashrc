@@ -72,6 +72,7 @@ if [[ -e "$HOME/.pathrc" ]]; then
 	. $HOME/.pathrc
 fi
 
+# Unify coding: solves the MATLAB core dump problem
 export LANG="en_US.UTF-8"
 export LC_CTYPE="en_US.UTF-8"
 export LC_NUMERIC="en_US.UTF-8"
