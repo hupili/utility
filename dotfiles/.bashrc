@@ -8,6 +8,7 @@
 #    * http://en.wikipedia.org/wiki/Uname
 if [[ `uname -s` == "Darwin" ]] ; then
 	_mac=1
+	_unix=1
 fi
 if [[ `uname -s` == "Linux" ]] ; then
 	_linux=1
@@ -25,8 +26,9 @@ alias crontab='crontab -i'
 
 # Some shortcuts for different directory listings
 # classify files in colour
-test $_linux && alias ls='ls -h --color=tty'
-test $_mac && alias ls='ls -h -G'
+#test $_linux && alias ls='ls -h --color=tty'
+#test $_mac && alias ls='ls -h -G'
+alias ls='ls -h --color=tty'
 # long list
 alias ll='ls -l'
 # avoid typo...
@@ -72,6 +74,7 @@ if [[ -e "$HOME/.pathrc" ]]; then
 	. $HOME/.pathrc
 fi
 
+# Unify coding: solves the MATLAB core dump problem
 export LANG="en_US.UTF-8"
 export LC_CTYPE="en_US.UTF-8"
 export LC_NUMERIC="en_US.UTF-8"
@@ -86,3 +89,10 @@ export LC_TELEPHONE="en_US.UTF-8"
 export LC_MEASUREMENT="en_US.UTF-8"
 export LC_IDENTIFICATION="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
+
+# Launch MAC apps from command-line
+test $_mac && alias firefox="/Applications/Firefox.app/Contents/MacOS/firefox-bin"
+test $_mac && alias thunderbird="/Applications/Thunderbird.app/Contents/MacOS/thunderbird-bin"
+
+# Redirect UNIX commands to GNU Linux commands
+#test $_unix && test `which gdate` && alias date=gdate
