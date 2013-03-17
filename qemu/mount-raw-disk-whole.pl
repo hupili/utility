@@ -2,7 +2,13 @@
 # hpl
 # 20110814
 #
-# mount a whole disk image to multiple directory
+# Mount a whole disk image to multiple directory. 
+# 
+# Procedure:
+#
+#    * Calculate partition information, e.g. offset and length, from
+#      output of `parted`. 
+#    * Mount those partitions with the help of loopback device. 
 
 use strict ;
 
@@ -13,7 +19,7 @@ my %h_fstrans = (
 	"fat32" => "vfat"
 ) ;
 
-#translate from parted's 'file system' to mount's 'type'
+# Translate from parted's 'file system' to mount's 'type'
 sub fs_trans{
 	my ($fs_orig) = @_ ;
 	if ( exists($h_fstrans{$fs_orig}) ){
@@ -40,7 +46,7 @@ my $dir = $ARGV[1] ;
 
 #==========main============
 
-#get partition infomation from 'parted'
+# Get partition infomation from 'parted'
 my @a_partitions = () ;
 my @a_lines = `parted $file unit B print` ;
 my $_table = 0 ;
@@ -55,7 +61,7 @@ for (my $i = 0 ; $i < scalar @a_lines ; $i ++){
 }
 #print "@a_partitions" ;
 
-#generate mount information
+# Generate mount information
 my %h_partitions = () ;
 for (my $i = 1 ; $i < scalar @a_partitions ; $i ++){
 	my $p = $a_partitions[$i] ;
@@ -76,7 +82,7 @@ for (my $i = 1 ; $i < scalar @a_partitions ; $i ++){
 	$h_partitions{$i}->{"fs"} = fs_trans($fs) ;
 }
 
-#mount to subdirectory
+# Mount to subdirectory
 foreach my $id(keys %h_partitions){
 	my $offset = $h_partitions{$id}->{"offset"} ;
 	my $sizelimit = $h_partitions{$id}->{"sizelimit"} ;
