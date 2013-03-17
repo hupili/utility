@@ -91,8 +91,18 @@ foreach my $id(keys %h_partitions){
 	print("mkdir -p $dir/p$id\n") ;
 	$ret = system("mkdir -p $dir/p$id") ;
 	print "ret:$ret\n" ;
-	print("$_sudo mount -o loop,offset=$offset,sizelimit=$sizelimit \"$file\" $dir/p$id\n") ;
-	$ret = system("$_sudo mount -o loop,offset=$offset,sizelimit=$sizelimit \"$file\" $dir/p$id") ;
+	if (1) {
+		# The script is originally written under Ubuntu Natty. It works 
+		# without this block. 
+		# 
+		# When test under Fedora Laughlin, we need to remove suffix 'B'
+		# to make it work. 
+		$offset =~ s/B$//;
+		$sizelimit =~ s/B$//;
+	}
+	my $cmd = "$_sudo mount -o loop,offset=$offset,sizelimit=$sizelimit \"$file\" $dir/p$id\n" ;
+	print("$cmd") ;
+	$ret = system("$cmd") ;
 	print "ret:$ret\n" ;
 }
 
