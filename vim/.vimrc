@@ -40,7 +40,8 @@ call pathogen#infect()
 "See '.vim/after/ftplugin'
 set noet       " no expand tab
 
-colorscheme evening 
+" colorscheme evening 
+colorscheme default
 
 " ==== NERDTree settings
 let NERDTreeChDirMode=2 "CWD of vim is changed by NerdTree when the tree root is changed
