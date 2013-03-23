@@ -12,6 +12,17 @@ set fdm=indent " vim will fold the codes according to indent
 set mouse=   " avoid entering visual mode by mouse operation
 set smarttab
 
+" The settings for new Powerline written in Python.
+" I'm watching this project and will migrate to it once ready
+"set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+
+" Recommended settings for (old) Powerline
+set nocompatible   " Disable vi-compatibility
+set laststatus=2   " Always show the statusline
+set encoding=utf-8 " Necessary to show Unicode glyphs
+set t_Co=256 " Explicitly tell Vim that the terminal supports 256 colors
+
+
 " disable beepings
 set vb t_vb=
 set noerrorbells
