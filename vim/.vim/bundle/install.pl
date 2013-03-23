@@ -40,7 +40,7 @@ my %h_bundles = (
 # markdown:
 "git:markdown" => "https://github.com/tpope/vim-markdown.git",
 # powerline:
-"git:vim-powerline" => "git://github.com/Lokaltog/vim-powerline.git",
+"git:vim-powerline" => "git://github.com/hupili/vim-powerline.git",
 ) ;
 
 for my $plugin(keys %h_bundles){

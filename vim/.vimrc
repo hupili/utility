@@ -12,17 +12,6 @@ set fdm=indent " vim will fold the codes according to indent
 set mouse=   " avoid entering visual mode by mouse operation
 set smarttab
 
-" The settings for new Powerline written in Python.
-" I'm watching this project and will migrate to it once ready
-"set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
-
-" Recommended settings for (old) Powerline
-set nocompatible   " Disable vi-compatibility
-set laststatus=2   " Always show the statusline
-set encoding=utf-8 " Necessary to show Unicode glyphs
-set t_Co=256 " Explicitly tell Vim that the terminal supports 256 colors
-
-
 " disable beepings
 set vb t_vb=
 set noerrorbells
@@ -53,6 +42,23 @@ set noet       " no expand tab
 
 " colorscheme evening 
 colorscheme default
+
+" ==== Powerline customization
+" The settings for new Powerline written in Python.
+" I'm watching this project and will migrate to it once ready
+"set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+
+" Recommended settings for (old) Powerline
+set nocompatible   " Disable vi-compatibility
+set laststatus=2   " Always show the statusline
+set encoding=utf-8 " Necessary to show Unicode glyphs
+set t_Co=256 " Explicitly tell Vim that the terminal supports 256 colors
+" NOTE. Use ':PowerlineClearCache' to clear the chache after changing powerline statusline
+"let g:Powerline_theme = 'solarized256'
+"let g:Powerline_cache_enabled = 0
+"call Pl#Hi#Segments(['fileformat'], {'n': ['gray8', 'gray2'],  'i': ['gray8', 'gray8']})
+"call Pl#Theme#InsertSegment('watchout', 'after', 'fileformat')
+"call Pl#Segment#Create('watchout', '%{&ff=="unix"?"":"Watch out!!"}', Pl#Segment#Modes('!N'))
 
 " ==== NERDTree settings
 let NERDTreeChDirMode=2 "CWD of vim is changed by NerdTree when the tree root is changed
