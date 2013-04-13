@@ -1,5 +1,13 @@
 # My Services
 
+## Usage
+
+   * Put the `*.workflow` dir in your `~/Library/Services/`.
+   * Configure hotkey for the service if necessary. 
+   ("System Preferen" -- "Keyboard" -- "Keyboard Shortcuts" -- "Services")
+
+## Short Introduction
+
    * `Open Terminal.workflow`:
    It just opens a new Terminal. 
    I bind it to a global keyboard shortcut.
