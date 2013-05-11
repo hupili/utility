@@ -1,0 +1,4 @@
+mycron-->$HOME/mycron
+enc-tar/tdec.sh-->$HOME/utils/tdec.sh
+enc-tar/tenc.sh-->$HOME/utils/tenc.sh
+misc/clear-tmp-file.sh-->$HOME/utils/clear-tmp-file
