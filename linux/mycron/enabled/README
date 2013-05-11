@@ -1,5 +1,0 @@
-
-Edit cron jobs in 'crontab.d'. 
-
-For those you want to enable, make a 
-soft link in this directory. 
