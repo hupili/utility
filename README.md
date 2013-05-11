@@ -1,6 +1,9 @@
 utility
 =======
 
+   * Configs, e.g. many dotfiles. 
+   * Tools for daily use. 
+
 Deploy (for Linux)
 ------------------
 
