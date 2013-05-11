@@ -22,7 +22,7 @@ alias rm='rm -i'
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
-alias crontab='crontab -i'
+#alias crontab='crontab -i'
 
 # Some shortcuts for different directory listings
 # classify files in colour
