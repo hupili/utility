@@ -78,7 +78,7 @@ let g:tlist_perl_settings = 'perl;s:Subroutines'
 let g:tlist_tex_settings = 'latex;s:Sections;l:Labels;r:Refs;m:Marks;b:Bibs'
 "let g:tlist_latex_settings = 'latex;s:Sections;l:Labels;r:Refs'
 
-" ==== penal moving shortcuts
+" ==== sub window moving shortcuts
 map <silent>,h <C-w>h
 map <silent>,j <C-w>j
 map <silent>,k <C-w>k
@@ -89,6 +89,11 @@ map <F11> <ESC>gT<cr>
 map <F12> <ESC>gt<cr>
 map! <F11> <ESC>gT<cr>
 map! <F12> <ESC>gt<cr>
+
+" ==== make
+map <F5> <ESC>:w<CR>:make<CR>
+map! <F5> <ESC>:w<CR>:make<CR>
+map <silent>,m <F5>
 
 " * C-] uses ':tag' by default
 " * g C-] uses ':tselect' by default 
