@@ -38,7 +38,7 @@ my %h_bundles = (
 # taglist: 
 "zip:taglist" => "http://vim.sourceforge.net/scripts/download_script.php?src_id=7701", 
 # markdown:
-"git:markdown" => "https://github.com/tpope/vim-markdown.git",
+"git:markdown" => "git://github.com/hupili/vim-markdown.git",
 # powerline:
 "git:vim-powerline" => "git://github.com/hupili/vim-powerline.git",
 ) ;
