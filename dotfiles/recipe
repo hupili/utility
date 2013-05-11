@@ -1,0 +1,6 @@
+.bash_profile-->$HOME/.bash_profile
+.bashrc-->$HOME/.bashrc
+.ctags-->$HOME/.ctags
+.gitconfig-->$HOME/.gitconfig
+.inputrc-->$HOME/.inputrc
+.vimperatorrc-->$HOME/.vimperatorrc
