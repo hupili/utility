@@ -110,7 +110,7 @@ test $_mac && alias thunderbird="/Applications/Thunderbird.app/Contents/MacOS/th
 #test $_unix && test `which gdate` && alias date=gdate
 
 # To install GEMs under user directory
-export GEM_HOME=$HOME/.gem
-export GEM_PATH=$HOME/.gem:/usr/lib/ruby/gems/1.8/
+#export GEM_HOME=$HOME/.gem
+#export GEM_PATH=$HOME/.gem:/usr/lib/ruby/gems/1.8/
 export PATH=$PATH:$HOME/.gem/bin:/usr/local/share/npm/bin
 export NODE_PATH=$NODE_PATH:$HOME/.npm/:/usr/local/share/npm/lib
