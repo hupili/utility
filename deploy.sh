@@ -12,6 +12,8 @@ function install(){
 		fi
 	else
 		echo "	[INFO] Linking to destination..."
+		dir_dst=`dirname $dst`
+		mkdir -p $dir_dst
 		ln -s $src $dst
 	fi
 }
