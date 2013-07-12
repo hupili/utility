@@ -45,7 +45,7 @@ alias vless="$HOME/.vim/macros/less.sh"
 # Git shortcuts
 alias gita='git add'
 alias gitc='git commit'
-alias gits='git status'
+alias gits='git status .'
 
 # The console style
 if [[ `whoami` == "root" ]] ; then
@@ -105,6 +105,7 @@ test $_mac && alias gt=_mac_gt
 # Launch MAC apps from command-line
 test $_mac && alias firefox="/Applications/Firefox.app/Contents/MacOS/firefox-bin"
 test $_mac && alias thunderbird="/Applications/Thunderbird.app/Contents/MacOS/thunderbird-bin"
+test $_mac && alias texmacs="/Applications/TeXmacs-1.0.7.19.app/Contents/MacOS/TeXmacs"
 
 # Redirect UNIX commands to GNU Linux commands
 #test $_unix && test `which gdate` && alias date=gdate
