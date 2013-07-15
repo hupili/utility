@@ -1,6 +1,31 @@
 "HPL's vimrc file
 "Edited for version 7.3.429
 
+" === Vundle Setup
+" Search for scripts here:
+"    * http://vim-scripts.org/vim/scripts.html
+"
+" Vundle requires this to be off?
+filetype off
+set nocompatible   " Disable vi-compatibility
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+Bundle 'garbas/vim-snipmate'
+Bundle 'tomtom/tlib_vim'
+Bundle 'MarcWeber/vim-addon-mw-utils'
+Bundle 'hupili/snipmate-snippets'
+Bundle 'rbonvall/snipmate-snippets-bib'
+Bundle 'git://repo.or.cz/vcscommand'
+Bundle 'scrooloose/nerdtree'
+Bundle 'vim-scripts/taglist.vim'
+Bundle 'hupili/vim-markdown'
+Bundle 'hupili/vim-powerline'
+Bundle 'tpope/vim-fugitive'
+
+filetype plugin indent on " required by Vundle
+
 syntax on
 set nu
 set ai
@@ -22,16 +47,15 @@ set noerrorbells
 " set visualbells 
 
 " ============ File type managenment ======
-filetype on 
 filetype indent on
 filetype plugin on
 au BufNewFile,BufRead *.json set filetype=json
 "au BufNewFile,BufRead *.tex set filetype=latex
 "au BufNewFile,BufRead *.md set filetype=markdown
 
-" === https://github.com/tpope/vim-pathogen
-" for easier plugin installation
-call pathogen#infect()
+"" === https://github.com/tpope/vim-pathogen
+"" for easier plugin installation
+"call pathogen#infect()
 
 "Generally, I don't expand tab.
 "Like 'Makefile' requires command to begin with a tab. 
@@ -49,7 +73,6 @@ colorscheme default
 "set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 
 " Recommended settings for (old) Powerline
-set nocompatible   " Disable vi-compatibility
 set laststatus=2   " Always show the statusline
 set encoding=utf-8 " Necessary to show Unicode glyphs
 set t_Co=256 " Explicitly tell Vim that the terminal supports 256 colors
