@@ -17,6 +17,8 @@ fi
 # Vi-mode: http://blog.sanctum.geek.nz/vi-mode-in-bash/ 
 # set -o vi
 
+export EDITOR="vim"
+
 # Interactive operation; Keep safe!
 alias rm='rm -i'
 alias rm='rm -i'
@@ -32,7 +34,7 @@ alias ls='ls -h --color=tty'
 # long list
 alias ll='ls -l'
 # avoid typo...
-alias sl='ls'                                   
+alias sl='ls'
 
 # Other shortcuts
 alias file-grep='xargs grep -l'
@@ -41,6 +43,7 @@ alias tailf='tail -f'
 alias ms='chmod u+x'
 alias rl='readlink -f'
 alias vless="$HOME/.vim/macros/less.sh"
+alias less='less -r'
 
 # Git shortcuts
 alias gita='git add'
