@@ -43,7 +43,7 @@ alias tailf='tail -f'
 alias ms='chmod u+x'
 alias rl='readlink -f'
 alias vless="$HOME/.vim/macros/less.sh"
-alias less='less -r'
+alias less='less -r' # raw-control chars. Used to show color
 
 # Git shortcuts
 alias gita='git add'
