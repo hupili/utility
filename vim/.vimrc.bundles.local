@@ -1,0 +1,2 @@
+Bundle "Valloric/YouCompleteMe"
+let g:spf13_bundle_groups=['general', 'snipmate', 'programming', 'php', 'ruby', 'python', 'go', 'twig', 'javascript', 'haskell', 'html', 'misc', 'scala']
