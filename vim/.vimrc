@@ -128,6 +128,8 @@ noremap <C-]> g<C-]>
 set encoding=utf8
 set fileencoding=utf8
 set fileencodings=utf8,gbk,big5
+
+" ==== Spell Checking
 " Touch a file called 'spell.enable' to enable spell checking.
 " Rare word file is located in current directory to avoid 
 " conflicts between multiple documents. 
