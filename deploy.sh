@@ -12,6 +12,8 @@ function install(){
 		fi
 	else
 		echo "	[INFO] Linking to destination..."
+		# In case the previous link is broken, remove it
+		rm -f $dst
 		dir_dst=`dirname $dst`
 		mkdir -p $dir_dst
 		ln -s $src $dst
