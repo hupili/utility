@@ -43,7 +43,8 @@ alias tailf='tail -f'
 alias ms='chmod u+x'
 alias rl='readlink -f'
 alias vless="$HOME/.vim/macros/less.sh"
-alias less='less -r' # raw-control chars. Used to show color
+# The following line causes man to fail
+#alias less='less -r' # raw-control chars. Used to show color
 
 # Git shortcuts
 alias gita='git add'
