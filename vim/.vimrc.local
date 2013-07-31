@@ -1,0 +1,57 @@
+imap <C-J> <esc>a<Plug>snipMateNextOrTrigger
+smap <C-J> <Plug>snipMateNextOrTrigger
+
+" disable beepings
+set vb t_vb=
+set noerrorbells
+" The above one works in my environment.
+" The followings are suggestions from the Internet.
+" Keep them here for future reference. 
+" set t_vb=
+" set visualbells 
+
+" ==== NERDTree settings
+let NERDTreeChDirMode=2 "CWD of vim is changed by NerdTree when the tree root is changed
+let NERDTreeIgnore=['\.vim$', '\~$', '\.pyc$', '\.swp$']
+let NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$',  '\~$']
+let NERDTreeShowBookmarks=1
+map <F3> :NERDTreeToggle<CR>
+
+" ==== Taglist settings
+let Tlist_GainFocus_On_ToggleOpen=1 "auto locate cursor in Tlist window
+let Tlist_File_Fold_Auto_Close = 1  "close tag tree for inactive files
+let Tlist_Close_On_Select = 1       "close TL on select, use p if just view code but not exit
+map <F4> :TlistToggle<CR>
+"let g:tlist_markdown_settings = 'markdown;h:heading1;h:heading2;h:heading3'
+let g:tlist_markdown_settings = 'markdown;h:Headlins'
+let g:tlist_perl_settings = 'perl;s:Subroutines'
+let g:tlist_tex_settings = 'latex;s:Sections;l:Labels;r:Refs;m:Marks;b:Bibs'
+"let g:tlist_latex_settings = 'latex;s:Sections;l:Labels;r:Refs'
+
+" ==== make
+map <F5> <ESC>:w<CR>:make<CR>
+map! <F5> <ESC>:w<CR>:make<CR>
+map <silent>,m <F5>
+
+" * C-] uses ':tag' by default
+" * g C-] uses ':tselect' by default 
+"   and uses ':tag' if there's ambiguities
+" * This makes C-] a better shortcut 
+noremap <C-]> g<C-]>
+
+" ==== Spell Checking
+" Touch a file called 'spell.enable' to enable spell checking.
+" Rare word file is located in current directory to avoid 
+" conflicts between multiple documents. 
+" Remember to change the encodings accordingly
+if (match(system("test -f spell.enable; echo $?"), "0") != -1)
+	set spell
+	set spf=spell.utf8.add
+	map <F6> <ESC>[s
+	map <F7> <ESC>]s
+	map <F8> <ESC>zg
+	map! <F6> <ESC>[s
+	map! <F7> <ESC>]s
+	map! <F8> <ESC>zg
+endif
+

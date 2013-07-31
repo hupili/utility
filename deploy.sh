@@ -38,3 +38,6 @@ do
 		install $src $dst
 	done
 done
+
+git submodule init
+git submodule update

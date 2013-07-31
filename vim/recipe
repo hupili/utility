@@ -1,2 +1,4 @@
 .vimrc-->$HOME/.vimrc
 .vim-->$HOME/.vim
+.vimrc.bundles.local-->$HOME/.vimrc.bundles.local
+.vimrc.local-->$HOME/.vimrc.local

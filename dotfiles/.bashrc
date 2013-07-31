@@ -17,6 +17,9 @@ fi
 # Vi-mode: http://blog.sanctum.geek.nz/vi-mode-in-bash/ 
 # set -o vi
 
+export HISTSIZE=50000
+export HISTFILESIZE=5000000
+
 export EDITOR="vim"
 
 # Interactive operation; Keep safe!
