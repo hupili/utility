@@ -97,7 +97,8 @@ export LC_MEASUREMENT="en_US.UTF-8"
 export LC_IDENTIFICATION="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
 
-function _mac_gt(){
+function _mac_gt()
+{
 	if [[ "$1" != "" ]]; then
 		open -a Terminal "$1"
 	else
@@ -108,6 +109,38 @@ function _mac_gt(){
 # Terminal and GUI shortcuts
 test $_mac && alias go="open"
 test $_mac && alias gt=_mac_gt
+
+function mynotify()
+{
+    # Unified notification from
+    # https://github.com/sickill/git-dude/blob/master/git-dude
+    if [ $(which notify-send 2>/dev/null) ]; then
+        notify_cmd='notify-send -i "$ICON_PATH" "$TITLE" "$DESCRIPTION"'
+    elif [ $(which growlnotify 2>/dev/null) ]; then
+        notify_cmd='growlnotify -n "$app_name" --image "$ICON_PATH" -m "$DESCRIPTION" "$TITLE"'
+    elif [ $(which kdialog 2>/dev/null) ]; then
+        notify_cmd='kdialog --icon $ICON_PATH --title "$TITLE" --passivepopup "$DESCRIPTION"'
+    elif [ $(which notify 2>/dev/null) ]; then
+        notify_cmd='notify --type information --icon "$ICON_PATH" --group "Git Commit" --title "$TITLE" "$DESCRIPTION"'
+    elif [ $(which terminal-notifier 2>/dev/null) ]; then
+        notify_cmd='terminal-notifier -title "$TITLE" -message "$DESCRIPTION"'
+    fi
+
+    local ICON_PATH="$1"
+    local TITLE="$2"
+    local DESCRIPTION="$3"
+
+    if [ -n "$notify_cmd" ]; then
+        eval $notify_cmd
+    fi
+
+    date "+%T %D"
+    echo "$TITLE"
+    if [ -n "$DESCRIPTION" ]; then
+        echo "$DESCRIPTION"
+    fi
+    echo
+}
 
 # Launch MAC apps from command-line
 test $_mac && alias firefox="/Applications/Firefox.app/Contents/MacOS/firefox-bin"
