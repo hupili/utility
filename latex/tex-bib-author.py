@@ -5,6 +5,17 @@
 #
 # Test: python -m doctest tex-bib-author.py -v
 
+"""
+Usage:
+    tex-bib-author.py <author_string>
+    tex-bib-author.py <author_strings>...
+    tex-bib-author.py (-h | --help)
+
+Options:
+    -h --help     Show this screen.
+"""
+
+
 import sys
 
 def author_presentation2bibtex(text_presentation):
@@ -31,19 +42,21 @@ def author_presentation2bibtex(text_presentation):
     return unicode(u' and '.join(authors_reversed))
 
 if __name__ == '__main__':
-    if len(sys.argv) == 2:
+    from docopt import docopt
+    arguments = docopt(__doc__, version='tex-bib-author.py 0.1')
+    #print arguments
+    #sys.exit(-1)
+    author_string = arguments['<author_string>']
+    if author_string is None:
+        author_string = ' '.join(arguments['<author_strings>'])
+    try:
+        u_text = author_string.decode(sys.stdin.encoding)
+    except:
         try:
-            u_text = sys.argv[1].decode(sys.stdin.encoding)
+            u_text = author_string.decode(sys.getdefaultencoding())
         except:
             try:
-                u_text = sys.argv[1].decode(sys.getdefaultencoding())
+                u_text = author_string.decode('utf-8')
             except:
-                try:
-                    u_text = sys.argv[1].decode('utf-8')
-                except:
-                    print 'I have no way to decode your input'
-        print author_presentation2bibtex(u_text)
-    else:
-        print 'usage: {0} "the author string presentation"'.format(sys.argv[0])
-
-
+                print 'I have no way to decode your input'
+    print author_presentation2bibtex(u_text)
