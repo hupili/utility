@@ -21,6 +21,7 @@ export HISTSIZE=50000
 export HISTFILESIZE=5000000
 
 export EDITOR="vim"
+alias vi='vim'
 
 # Interactive operation; Keep safe!
 alias rm='rm -i'
