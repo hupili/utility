@@ -146,6 +146,7 @@ function mynotify()
 test $_mac && alias firefox="/Applications/Firefox.app/Contents/MacOS/firefox-bin"
 test $_mac && alias thunderbird="/Applications/Thunderbird.app/Contents/MacOS/thunderbird-bin"
 test $_mac && alias texmacs="/Applications/TeXmacs-1.0.7.19.app/Contents/MacOS/TeXmacs"
+test $_mac && alias skim="$HOME/Applications/Skim.app/Contents/MacOS/Skim"
 
 # Redirect UNIX commands to GNU Linux commands
 #test $_unix && test `which gdate` && alias date=gdate
