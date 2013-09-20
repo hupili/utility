@@ -7,6 +7,7 @@
 --regex-markdown=/^#####[ \t]+(.*)/-        \1/h,heading5/
 --regex-markdown=/^######[ \t]+(.*)/-          \1/h,heading6/
 --regex-markdown=/^#######[ \t]+(.*)/-            \1/h,heading7/
+--regex-markdown=/^-{3,}$/------/h,split/
 
 --langdef=latex
 --langmap=latex:.tex
@@ -31,3 +32,4 @@
 --regex-latex=/\\label[[:space:]]*\{([^}]+)\}/\1/l,label/
 --regex-latex=/\\ref[[:space:]]*\{([^}]+)\}/\1/r,ref/
 --regex-latex=/\\pageref[[:space:]]*\{([^}]+)\}/\1/p,pageref/
+--regex-latex=/\\begin\{block\}[[:space:]]*(\{([^}]+)\})?/\1/o,block/
