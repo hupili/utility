@@ -98,20 +98,6 @@ export LC_MEASUREMENT="en_US.UTF-8"
 export LC_IDENTIFICATION="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
 
-function _mac_gt()
-{
-	if [[ "$1" != "" ]]; then
-		open -a Terminal "$1"
-	else
-		open -a Terminal `pwd`
-	fi
-}
-
-# Terminal and GUI shortcuts
-test $_mac && alias go="open"
-test $_mac && alias gt=_mac_gt
-
-
 function mynotify()
 {
     # Unified notification from
@@ -151,14 +137,34 @@ genpasswd() {
     tr -dc A-Za-z0-9_ < /dev/urandom | head -c ${l} | xargs
 }
 
-# Launch MAC apps from command-line
-test $_mac && alias firefox="/Applications/Firefox.app/Contents/MacOS/firefox-bin"
-test $_mac && alias thunderbird="/Applications/Thunderbird.app/Contents/MacOS/thunderbird-bin"
-test $_mac && alias texmacs="/Applications/TeXmacs-1.0.7.19.app/Contents/MacOS/TeXmacs"
-test $_mac && alias skim="$HOME/Applications/Skim.app/Contents/MacOS/Skim"
-test $_mac && alias inkscape="/Applications/Inkscape.app/Contents/Resources/bin/inkscape"
-test $_mac && alias gemacs="open -a emacs"
-test $_mac && alias sublime="open -a 'Sublime Text 2'"
+function _mac_gt()
+{
+	if [[ "$1" != "" ]]; then
+		open -a Terminal "$1"
+	else
+		open -a Terminal `pwd`
+	fi
+}
+
+_init_mac() {
+    # Launch MAC apps from command-line
+    alias firefox="/Applications/Firefox.app/Contents/MacOS/firefox-bin"
+    alias thunderbird="/Applications/Thunderbird.app/Contents/MacOS/thunderbird-bin"
+    alias texmacs="/Applications/TeXmacs-1.0.7.19.app/Contents/MacOS/TeXmacs"
+    alias skim="$HOME/Applications/Skim.app/Contents/MacOS/Skim"
+    alias inkscape="/Applications/Inkscape.app/Contents/Resources/bin/inkscape"
+    alias gemacs="open -a emacs"
+    alias sublime="open -a 'Sublime Text 2'"
+
+    # Terminal and GUI shortcuts
+    test $_mac && alias go="open"
+    test $_mac && alias gt=_mac_gt
+
+    source `brew --repository`/Library/Contributions/brew_bash_completion.sh
+}
+
+test $_mac && _init_mac
+
 
 # Redirect UNIX commands to GNU Linux commands
 #test $_unix && test `which gdate` && alias date=gdate
@@ -171,4 +177,3 @@ export NODE_PATH=$NODE_PATH:$HOME/.npm/:/usr/local/share/npm/lib
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
-source `brew --repository`/Library/Contributions/brew_bash_completion.sh
