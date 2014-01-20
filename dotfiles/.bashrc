@@ -137,6 +137,14 @@ genpasswd() {
     tr -dc A-Za-z0-9_ < /dev/urandom | head -c ${l} | xargs
 }
 
+function _go_dir()
+{
+    full_path=`readlink -f $1`
+    dir_name=`dirname $full_path`
+    cd $dir_name
+}
+alias gd=_go_dir
+
 function _mac_gt()
 {
 	if [[ "$1" != "" ]]; then
@@ -146,11 +154,12 @@ function _mac_gt()
 	fi
 }
 
+
 _init_mac() {
     # Launch MAC apps from command-line
     alias firefox="/Applications/Firefox.app/Contents/MacOS/firefox-bin"
     alias thunderbird="/Applications/Thunderbird.app/Contents/MacOS/thunderbird-bin"
-    alias texmacs="/Applications/TeXmacs-1.0.7.19.app/Contents/MacOS/TeXmacs"
+    alias texmacs="/Applications/TeXmacs-1.0.7.20.app/Contents/MacOS/TeXmacs"
     alias skim="$HOME/Applications/Skim.app/Contents/MacOS/Skim"
     alias inkscape="/Applications/Inkscape.app/Contents/Resources/bin/inkscape"
     alias gemacs="open -a emacs"
@@ -176,4 +185,6 @@ export PATH=$PATH:$HOME/.gem/bin:/usr/local/share/npm/bin
 export NODE_PATH=$NODE_PATH:$HOME/.npm/:/usr/local/share/npm/lib
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+export PROMPT_COMMAND='history -a'
 
