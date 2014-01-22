@@ -4,3 +4,4 @@
 .gitconfig-->$HOME/.gitconfig
 .inputrc-->$HOME/.inputrc
 .vimperatorrc-->$HOME/.vimperatorrc
+.Xmodmap-->$HOME/.Xmodmap
