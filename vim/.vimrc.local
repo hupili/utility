@@ -1,6 +1,30 @@
 imap <C-J> <esc>a<Plug>snipMateNextOrTrigger
 smap <C-J> <Plug>snipMateNextOrTrigger
 
+let g:neocomplcache_enable_at_startup=1
+
+" Sneak remaps s by default....!!!!
+" Remap to f and F
+"unmap s
+"nunmap s
+"xunmap s
+"ounmap s
+" Double character sneak
+nmap ,f <Plug>Sneak_s
+nmap ,F <Plug>Sneak_S
+xmap ,f <Plug>Sneak_s
+xmap ,F <Plug>Sneak_S
+omap ,f <Plug>Sneak_s
+omap ,F <Plug>Sneak_S
+" Single character sneak
+nmap f <Plug>Sneak_f
+nmap F <Plug>Sneak_F
+xmap f <Plug>Sneak_f
+xmap F <Plug>Sneak_F
+omap f <Plug>Sneak_f
+omap F <Plug>Sneak_F
+
+
 " disable beepings
 set vb t_vb=
 set noerrorbells
