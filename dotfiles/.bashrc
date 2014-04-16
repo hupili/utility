@@ -159,11 +159,17 @@ _init_mac() {
     # Launch MAC apps from command-line
     alias firefox="/Applications/Firefox.app/Contents/MacOS/firefox-bin"
     alias thunderbird="/Applications/Thunderbird.app/Contents/MacOS/thunderbird-bin"
-    alias texmacs="/Applications/TeXmacs-1.0.7.20.app/Contents/MacOS/TeXmacs"
+    alias texmacs="/Applications/TeXmacs-1.99.1.app/Contents/MacOS/TeXmacs"
     alias skim="$HOME/Applications/Skim.app/Contents/MacOS/Skim"
     alias inkscape="/Applications/Inkscape.app/Contents/Resources/bin/inkscape"
     alias gemacs="open -a emacs"
     alias sublime="open -a 'Sublime Text 2'"
+    alias atom="open -a Atom"
+    #alias rstudio="open -a RStudio"
+    # Solve the problem of Rcpp
+    # See
+    # http://stackoverflow.com/questions/21370363/link-error-installing-rcpp-library-not-found-for-lintl
+    alias rstudio="PKG_LIBS=-L/usr/local/Cellar/gettext/0.18.3.2/lib open -a RStudio"
 
     # Terminal and GUI shortcuts
     test $_mac && alias go="open"
@@ -183,8 +189,13 @@ test $_mac && _init_mac
 #export GEM_PATH=$HOME/.gem:/usr/lib/ruby/gems/1.8/
 export PATH=$PATH:$HOME/.gem/bin:/usr/local/share/npm/bin
 export NODE_PATH=$NODE_PATH:$HOME/.npm/:/usr/local/share/npm/lib
+# Following is to solve the complaint when installing yeoman
+export NODE_PATH=$NODE_PATH:/usr/local/share/npm/lib/node_modules
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+#export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
+
+export PATH=$HOME/.rvm/bin:$PATH # Add RVM to PATH for scripting
 
 export PROMPT_COMMAND='history -a'
 
