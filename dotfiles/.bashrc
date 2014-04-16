@@ -28,6 +28,7 @@ alias rm='rm -i'
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
+alias cd=_cd
 #alias crontab='crontab -i'
 
 # Some shortcuts for different directory listings
@@ -154,8 +155,23 @@ function _mac_gt()
 	fi
 }
 
+# Smarter cd
+# Jump to dir if file name is given
+function _cd()
+{
+    if [[ $# == 1 ]]; then
+        if [[ -f "$1" ]]; then
+            \cd `dirname $1`
+        else
+            \cd $1
+        fi
+    else
+        \cd $@
+    fi
+}
 
-_init_mac() {
+
+function _init_mac() {
     # Launch MAC apps from command-line
     alias firefox="/Applications/Firefox.app/Contents/MacOS/firefox-bin"
     alias thunderbird="/Applications/Thunderbird.app/Contents/MacOS/thunderbird-bin"
