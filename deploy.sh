@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+git submodule init
+git submodule update
+
 function install(){
 	src=`readlink -f $1`
 	dst=$2
@@ -39,5 +42,3 @@ do
 	done
 done
 
-git submodule init
-git submodule update
