@@ -4,6 +4,9 @@ Bundle 'rbonvall/snipmate-snippets-bib'
 Bundle 'git://repo.or.cz/vcscommand'
 Bundle 'vim-scripts/taglist.vim'
 "Bundle 'vim-scripts/LaTeX-Suite-aka-Vim-LaTeX'
+"Bundle 'hynek/vim-python-pep8-indent'
+"Bundle 'python.vim'
 
 let g:spf13_bundle_groups=['general', 'snipmate', 'programming', 'php', 'ruby', 'python', 'go', 'twig', 'javascript', 'haskell', 'html', 'misc', 'scala', 'youcompleteme']
+""let g:spf13_bundle_groups=['general', 'snipmate', 'programming', 'php', 'ruby', 'go', 'twig', 'javascript', 'haskell', 'html', 'misc', 'scala', 'youcompleteme']
 

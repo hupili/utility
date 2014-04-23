@@ -1,3 +1,5 @@
+let g:pymode=0
+
 imap <C-J> <esc>a<Plug>snipMateNextOrTrigger
 smap <C-J> <Plug>snipMateNextOrTrigger
 
