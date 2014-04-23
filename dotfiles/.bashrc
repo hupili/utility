@@ -191,7 +191,7 @@ function _init_mac() {
     test $_mac && alias go="open"
     test $_mac && alias gt=_mac_gt
 
-    source `brew --repository`/Library/Contributions/brew_bash_completion.sh
+    #source `brew --repository`/Library/Contributions/brew_bash_completion.sh
 }
 
 test $_mac && _init_mac
