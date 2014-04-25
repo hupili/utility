@@ -2,8 +2,8 @@
 " Note: sync with wiki
 
 " Change key mapping in normal mode, please check Vrome Features for available key mapping
-map  j <C-f>
-map  j 10j
+" map  j <C-f>
+" map  j 10j
 
 " Remove key mapping in normal mode
 unmap <C-f>
@@ -48,3 +48,28 @@ set qm_hn=http://news.ycombinator.com
 " custom quick mark triggering JS (view below)
 set qm_r=::javascript::CustomMark.readLater();
 " vim: set ft=vim:
+
+
+" Form my original vimperatorrc file
+" Following may not work due to different meta key
+" noremap <C-p> <S-Esc><C-p><S-Esc>
+" "cnoremap <C-x> <S-Esc><C-x><S-Esc>
+" cnoremap <C-u> <S-Esc><C-u><S-Esc>
+" inoremap <C-a> <S-Esc><C-a><S-Esc>
+" "inoremap <C-x> <S-Esc><C-x><S-Esc>
+" inoremap <C-z> <S-Esc><C-z><S-Esc>
+map <lt> gT
+map > gt
+noremap A <Nop>
+noremap a <Nop>
+noremap <C-o> <Nop>
+noremap <C-i> <Nop>
+noremap J <C-d>
+noremap K <C-u>
+noremap j 3j
+noremap k 3k
+noremap h 3h
+noremap l 3l
+" noremap <C-s> <C-c>
+" noremap <C-a> <S-Esc><C-a><S-Esc>
+
