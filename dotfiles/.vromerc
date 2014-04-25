@@ -1,4 +1,4 @@
-""" """ .vromerc example file
+" "" """ .vromerc example file
 " Note: sync with wiki
 
 " Change key mapping in normal mode, please check Vrome Features for available key mapping
@@ -58,7 +58,7 @@ set qm_r=::javascript::CustomMark.readLater();
 " inoremap <C-a> <S-Esc><C-a><S-Esc>
 " "inoremap <C-x> <S-Esc><C-x><S-Esc>
 " inoremap <C-z> <S-Esc><C-z><S-Esc>
-map <lt> gT
+map < gT
 map > gt
 map A <Nop>
 map a <Nop>
