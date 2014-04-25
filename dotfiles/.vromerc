@@ -60,16 +60,16 @@ set qm_r=::javascript::CustomMark.readLater();
 " inoremap <C-z> <S-Esc><C-z><S-Esc>
 map <lt> gT
 map > gt
-noremap A <Nop>
-noremap a <Nop>
-noremap <C-o> <Nop>
-noremap <C-i> <Nop>
-noremap J <C-d>
-noremap K <C-u>
-noremap j 3j
-noremap k 3k
-noremap h 3h
-noremap l 3l
+map A <Nop>
+map a <Nop>
+map <C-o> <Nop>
+map <C-i> <Nop>
+map J <C-d>
+map K <C-u>
+map j 3j
+map k 3k
+map h 3h
+map l 3l
 " noremap <C-s> <C-c>
 " noremap <C-a> <S-Esc><C-a><S-Esc>
 
