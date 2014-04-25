@@ -1,8 +1,5 @@
 let g:pymode=0
 
-imap <C-J> <esc>a<Plug>snipMateNextOrTrigger
-smap <C-J> <Plug>snipMateNextOrTrigger
-
 let g:neocomplcache_enable_at_startup=1
 
 " Sneak remaps s by default....!!!!
