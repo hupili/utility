@@ -6,4 +6,4 @@
     lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ar) %C(bold blue)%Creset %C(yellow)%an' --abbrev-commit
     df = diff --color
 [core]
-	editor = /usr/bin/vim --noplugin
+    editor = /usr/bin/vim --noplugin -u /dev/null
