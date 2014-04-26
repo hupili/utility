@@ -84,7 +84,7 @@ export PATH=$PATH:/usr/local/share/npm/bin
 export NODE_PATH=$NODE_PATH:$HOME/.npm/:/usr/local/share/npm/lib:/usr/local/share/npm/lib/node_modules
 
 # VirtualEnv Wrapper
-#export WORKON_HOME=~/VirtualEnvs
+export WORKON_HOME=~/VirtualEnvs
 #mkdir -p $WORKON_HOME
 #source /usr/local/bin/virtualenvwrapper.sh
 
