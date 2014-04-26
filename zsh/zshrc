@@ -69,8 +69,9 @@ alias file-grep='xargs grep -l'
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git)
+plugins=(git brew pip sprunge urltools virtualenvwrapper)
 
+export PATH=/usr/local/bin:$PATH
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -81,6 +82,11 @@ export PATH=$PATH:$HOME/.gem/bin:
 # Node global executables
 export PATH=$PATH:/usr/local/share/npm/bin
 export NODE_PATH=$NODE_PATH:$HOME/.npm/:/usr/local/share/npm/lib:/usr/local/share/npm/lib/node_modules
+
+# VirtualEnv Wrapper
+#export WORKON_HOME=~/VirtualEnvs
+#mkdir -p $WORKON_HOME
+#source /usr/local/bin/virtualenvwrapper.sh
 
 
 # export MANPATH="/usr/local/man:$MANPATH"
