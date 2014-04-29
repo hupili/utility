@@ -108,3 +108,55 @@ export WORKON_HOME=~/VirtualEnvs
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
+#
+
+# OS specific initialization
+
+function _mac_gt()
+{
+	if [[ "$1" != "" ]]; then
+		open -a Terminal "$1"
+	else
+		open -a Terminal `pwd`
+	fi
+}
+
+if [[ `uname -s` == "Darwin" ]] ; then
+	_mac=1
+	_unix=1
+fi
+if [[ `uname -s` == "Linux" ]] ; then
+	_linux=1
+fi
+
+function _init_mac() {
+    # Launch MAC apps from command-line
+    alias firefox="/Applications/Firefox.app/Contents/MacOS/firefox-bin"
+    alias thunderbird="/Applications/Thunderbird.app/Contents/MacOS/thunderbird-bin"
+    alias texmacs="/Applications/TeXmacs-1.99.1.app/Contents/MacOS/TeXmacs"
+    alias skim="$HOME/Applications/Skim.app/Contents/MacOS/Skim"
+    alias inkscape="/Applications/Inkscape.app/Contents/Resources/bin/inkscape"
+    alias gemacs="open -a emacs"
+    alias sublime="open -a 'Sublime Text 2'"
+    alias atom="open -a Atom"
+    #alias rstudio="open -a RStudio"
+    # Solve the problem of Rcpp
+    # See
+    # http://stackoverflow.com/questions/21370363/link-error-installing-rcpp-library-not-found-for-lintl
+    alias rstudio="PKG_LIBS=-L/usr/local/Cellar/gettext/0.18.3.2/lib open -a RStudio"
+
+    # Terminal and GUI shortcuts
+    test $_mac && alias go="open"
+    test $_mac && alias gt=_mac_gt
+
+    #source `brew --repository`/Library/Contributions/brew_bash_completion.sh
+}
+
+test $_mac && _init_mac
+
+genpasswd() {
+    # http://www.cyberciti.biz/faq/linux-random-password-generator/
+    local l=$1
+    [[ "$l" == "" ]] && l=16
+    tr -dc A-Za-z0-9_ < /dev/urandom | head -c ${l} | xargs
+}
