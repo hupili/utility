@@ -31,6 +31,7 @@ alias rl='readlink -f'
 # ls -1 * | file-grep
 # Note, only file names are pipelined
 alias file-grep='xargs grep -l'
+alias psg='ps aux | grep'
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
