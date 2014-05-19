@@ -17,6 +17,7 @@ Options:
 
 
 import sys
+import re
 
 def extract_abstract(source):
     '''
@@ -27,6 +28,8 @@ def extract_abstract(source):
     u'abstract here'
     >>> extract_abstract('\\\\begin{abstract}\\nabstract here\\nand here\\n\\\\end{abstract}')
     u'abstract here and here'
+    >>> extract_abstract('\\\\begin{abstract}\\nabstract here.\\n  %commented line\\nand here\\n\\\\end{abstract}')
+    u'abstract here. and here'
     '''
     if isinstance(source, str):
         source = source.decode('utf-8')
@@ -41,7 +44,10 @@ def extract_abstract(source):
             in_abstract = False
             break
         if in_abstract:
-            abstract.append(line)
+            line = re.sub(r'%.*$', r'', line).strip()
+            #print 'line "%s"' % line
+            if line:
+                abstract.append(line)
     return ' '.join(abstract)
 
 
