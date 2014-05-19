@@ -82,6 +82,9 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH:$HOME/utils
 export PATH=$PATH:$HOME/.gem/bin:
 # Node global executables
 export PATH=$PATH:/usr/local/share/npm/bin
+# Haskell executables
+export PATH=$PATH:~/.cabal/bin
+
 export NODE_PATH=$NODE_PATH:$HOME/.npm/:/usr/local/share/npm/lib:/usr/local/share/npm/lib/node_modules
 
 # VirtualEnv Wrapper
