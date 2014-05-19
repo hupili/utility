@@ -25,12 +25,15 @@ def extract_abstract(source):
 
     >>> extract_abstract('\\\\begin{abstract}\\nabstract here\\n\\\\end{abstract}')
     u'abstract here'
+    >>> extract_abstract('\\\\begin{abstract}\\nabstract here\\nand here\\n\\\\end{abstract}')
+    u'abstract here and here'
     '''
     if isinstance(source, str):
         source = source.decode('utf-8')
-    abstract = ''
+    abstract = []
     in_abstract = False
     for line in source.split('\n'):
+        line = line.strip()
         if line.startswith(r'\begin{abstract}'):
             in_abstract = True
             continue
@@ -38,8 +41,8 @@ def extract_abstract(source):
             in_abstract = False
             break
         if in_abstract:
-            abstract += line
-    return abstract
+            abstract.append(line)
+    return ' '.join(abstract)
 
 
 if __name__ == '__main__':
