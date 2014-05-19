@@ -30,6 +30,8 @@ def extract_abstract(source):
     u'abstract here and here'
     >>> extract_abstract('\\\\begin{abstract}\\nabstract here.\\n  %commented line\\nand here\\n\\\\end{abstract}')
     u'abstract here. and here'
+    >>> extract_abstract('\\\\begin{abstract}\\nabstract here %commented.\\n  %commented line\\nand here\\n\\\\end{abstract}')
+    u'abstract here and here'
     '''
     if isinstance(source, str):
         source = source.decode('utf-8')
