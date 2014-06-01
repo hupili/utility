@@ -14,7 +14,7 @@ ZSH_THEME="hpl"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias -s py=vim
+#alias -s py=vim
 alias -s md=vim
 #alias -s log="less -MN"
 alias -s log="less"
