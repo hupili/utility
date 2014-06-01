@@ -62,4 +62,4 @@ if __name__ == '__main__':
         source = sys.stdin.read()
     else:
         source = open(tex_file, 'r').read()
-    print extract(source)
+    print extract_abstract(source)
