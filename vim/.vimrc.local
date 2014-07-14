@@ -53,6 +53,7 @@ let g:tlist_markdown_settings = 'markdown;h:Headlins'
 let g:tlist_perl_settings = 'perl;s:Subroutines'
 " Only show sections for brevity
 " If you want all other tags, switch the comment with next row
+" Note: it may not work with .tex files with long names or when "_" is in the names.
 let g:tlist_tex_settings = 'latex;s:Sections'
 "let g:tlist_tex_settings = 'latex;s:Sections;l:Labels;r:Refs;m:Marks;b:Bibs;o:Block'
 "let g:tlist_latex_settings = 'latex;s:Sections;l:Labels;r:Refs'
