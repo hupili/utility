@@ -88,7 +88,7 @@ alias psg='ps aux | grep'
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git brew pip sprunge urltools virtualenvwrapper)
 
-export PATH=$HOME/.local/bin/:/usr/local/bin:$PATH
+export PATH=$HOME/.local/bin:/usr/local/bin:$PATH
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
