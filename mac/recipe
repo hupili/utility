@@ -1,1 +1,2 @@
 commands/export-chrome-cookie.sh-->$HOME/utils/export-chrome-cookie.sh
+home-bin/bin-->$HOME/bin
