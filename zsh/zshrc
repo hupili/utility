@@ -107,6 +107,11 @@ export NODE_PATH=$NODE_PATH:$HOME/.npm/:/usr/local/share/npm/lib:/usr/local/shar
 export WORKON_HOME=~/VirtualEnvs
 #mkdir -p $WORKON_HOME
 #source /usr/local/bin/virtualenvwrapper.sh
+#
+
+export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+#export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:$PATH"
+
 
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -159,6 +164,8 @@ function _init_mac() {
     alias gemacs="open -a emacs"
     alias sublime="open -a 'Sublime Text 2'"
     alias atom="open -a Atom"
+    # https://gist.github.com/quickshiftin/9130153
+    alias man='_() { echo $1; man -M $(brew --prefix)/opt/coreutils/libexec/gnuman $1 1>/dev/null 2>&1;  if [ "$?" -eq 0 ]; then man -M $(brew --prefix)/opt/coreutils/libexec/gnuman $1; else man $1; fi }; _'
     #alias rstudio="open -a RStudio"
     # Solve the problem of Rcpp
     # See
