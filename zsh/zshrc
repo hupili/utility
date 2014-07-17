@@ -36,6 +36,7 @@ alias -s md=vim
 alias -s log="less"
 alias -s html="open -a Google\ Chrome"
 
+alias ls='ls --color'
 alias vi='vim'
 alias rm='rm -i'
 alias rm='rm -i'
@@ -101,7 +102,7 @@ export PATH=$PATH:/usr/local/share/npm/bin
 # Haskell executables
 export PATH=$PATH:~/.cabal/bin
 
-export NODE_PATH=$NODE_PATH:$HOME/.npm/:/usr/local/share/npm/lib:/usr/local/share/npm/lib/node_modules
+export NODE_PATH=$NODE_PATH:$HOME/.npm/:/usr/local/lib/node_modules:/usr/local/share/npm/lib:/usr/local/share/npm/lib/node_modules
 
 # VirtualEnv Wrapper
 export WORKON_HOME=~/VirtualEnvs
@@ -112,7 +113,10 @@ export WORKON_HOME=~/VirtualEnvs
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 #export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:$PATH"
 
-
+# TexLive
+export PATH="$PATH:/usr/local/texlive/2014/bin/x86_64-darwin"
+export INFOPATH="/usr/local/texlive/2014/texmf-dist/doc/info:$INFOPATH"
+export MANPATH="/usr/local/texlive/2014/texmf-dist/doc/man:$MANPATH"
 
 # export MANPATH="/usr/local/man:$MANPATH"
 #
