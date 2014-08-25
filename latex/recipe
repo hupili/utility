@@ -3,3 +3,4 @@ tex-strip-comment.pl-->$HOME/utils/tex-strip-comment.pl
 tex-table.pl-->$HOME/utils/tex-table.pl
 tex-bib-author.py-->$HOME/utils/tex-bib-author.py
 tex-extract-abstract.py-->$HOME/utils/tex-extract-abstract.py
+tex-ref-scan.py-->$HOME/utils/tex-ref-scan.py
