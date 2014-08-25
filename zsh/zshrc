@@ -36,7 +36,6 @@ alias -s md=vim
 alias -s log="less"
 alias -s html="open -a Google\ Chrome"
 
-alias ls='ls --color'
 alias vi='vim'
 alias rm='rm -i'
 alias rm='rm -i'
@@ -89,7 +88,7 @@ alias psg='ps aux | grep'
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git brew pip sprunge urltools virtualenvwrapper)
 
-export PATH=$HOME/.local/bin:/usr/local/bin:$PATH
+export PATH=$HOME/.local/bin:/usr/local/sbin:/usr/local/bin:$PATH
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -193,4 +192,9 @@ genpasswd() {
 }
 
 umask 0007
+
+# Must be places behind the sourcing oh-my-zsh to take effect
+# Or ls will be aliased to `ls -G`
+alias ls='ls --color'
+
 
