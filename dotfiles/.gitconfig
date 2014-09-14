@@ -1,6 +1,6 @@
 [user]
 	name = yhs
-	email = yhs.uestc@gmail.com
+	email = hs.yang@live.com
 [alias]
     #lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%aD) %C(bold blue)%Creset %C(yellow)%an' --abbrev-commit
     lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ar) %C(bold blue)%Creset %C(yellow)%an' --abbrev-commit
