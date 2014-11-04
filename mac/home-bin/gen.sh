@@ -2,7 +2,8 @@
 
 # For coreutils
 
-src_dir="/usr/local/Cellar/coreutils/8.22/bin"
+src_dir="/usr/local/Cellar/coreutils/8.23_1/bin"
+
 dst_dir="bin/core-utils"
 
 for fn in `ls -1 $src_dir`
