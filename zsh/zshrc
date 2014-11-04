@@ -110,7 +110,7 @@ export WORKON_HOME=~/VirtualEnvs
 #source /usr/local/bin/virtualenvwrapper.sh
 #
 
-export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+export PATH="/Users/hupili/bin/core-utils:$PATH"
 #export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:$PATH"
 
 # TexLive
@@ -160,7 +160,7 @@ fi
 
 function _init_mac() {
     # Launch MAC apps from command-line
-    alias firefox="/Applications/Firefox.app/Contents/MacOS/firefox-bin"
+    alias firefox="/opt/homebrew-cask/Caskroom/firefox/latest/Firefox.app/Contents/MacOS/firefox-bin"
     alias thunderbird="/Applications/Thunderbird.app/Contents/MacOS/thunderbird-bin"
     alias texmacs="/Applications/TeXmacs-1.99.1.app/Contents/MacOS/TeXmacs"
     alias skim="$HOME/Applications/Skim.app/Contents/MacOS/Skim"
@@ -199,4 +199,9 @@ test $_mac || umask 0007
 # Or ls will be aliased to `ls -G`
 alias ls='ls --color'
 
+# Configure docker client
+export DOCKER_CERT_PATH=/Users/hupili/.boot2docker/certs/boot2docker-vm
+export DOCKER_TLS_VERIFY=1
+# Check IP using cmd: boot2docker ip
+export DOCKER_HOST=tcp://192.168.59.103:2376
 
