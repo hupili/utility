@@ -1,0 +1,8 @@
+#!/bin/bash
+#
+# put this script in ~/Library/Rime, then deploy Rime for Squirrel:
+# ./rime_deployer --build . "/Library/Input Methods/Squirrel.app/SharedSupport/"
+# see other supported options:
+# ./rime_deployer
+
+DYLD_LIBRARY_PATH="/Library/Input Methods/Squirrel.app/Contents/Frameworks" "/Library/Input Methods/Squirrel.app/Contents/MacOS/rime_deployer" $@
