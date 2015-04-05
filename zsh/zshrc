@@ -94,13 +94,16 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
+export PATH="/Users/hupili/bin/core-utils:$PATH"
+#export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:$PATH"
+
 export PATH=$HOME/bin:/usr/local/bin:$PATH:$HOME/utils
-# Ruby executables
-export PATH=$PATH:$HOME/.gem/bin:
 # Node global executables
 export PATH=$PATH:/usr/local/share/npm/bin
 # Haskell executables
 export PATH=$PATH:~/.cabal/bin
+# Ruby executables
+export PATH=$PATH:$HOME/.gem/bin:
 
 export NODE_PATH=$NODE_PATH:$HOME/.npm/:/usr/local/lib/node_modules:/usr/local/share/npm/lib:/usr/local/share/npm/lib/node_modules
 
@@ -109,9 +112,6 @@ export WORKON_HOME=~/VirtualEnvs
 #mkdir -p $WORKON_HOME
 #source /usr/local/bin/virtualenvwrapper.sh
 #
-
-export PATH="/Users/hupili/bin/core-utils:$PATH"
-#export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:$PATH"
 
 # TexLive
 export PATH="$PATH:/usr/local/texlive/2014/bin/x86_64-darwin"
@@ -192,6 +192,16 @@ genpasswd() {
     tr -dc A-Za-z0-9_ < /dev/urandom | head -c ${l} | xargs
 }
 
+boostterminal() {
+    # https://news.ycombinator.com/item?id=7747982
+    if [[ $(find /private/var/log/asl/ -name "*.asl" ) == 0 ]]; then
+        echo "removing .asl files"
+        sudo rm -rf /private/var/log/asl/*.asl
+    fi
+    echo "removing terminal.plist"
+    rm -f ~/Library/Preferences/com.apple.terminal.plist
+}
+
 # If on MAC, we stick to the system default
 test $_mac || umask 0007
 
@@ -205,3 +215,4 @@ export DOCKER_TLS_VERIFY=1
 # Check IP using cmd: boot2docker ip
 export DOCKER_HOST=tcp://192.168.59.103:2376
 
+#which rvm && rvm use 2.1.3
