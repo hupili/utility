@@ -94,7 +94,9 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="/Users/hupili/bin/core-utils:$PATH"
+#export PATH="/Users/hupili/bin/core-utils:$PATH"
+# From the latest notificadtion after installing brewed coreutils
+export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
 #export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:$PATH"
 
 export PATH=$HOME/bin:/usr/local/bin:$PATH:$HOME/utils
