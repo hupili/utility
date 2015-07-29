@@ -4,10 +4,10 @@ git submodule init
 git submodule update
 
 function install(){
-	src=`readlink -f $1`
+	src=`greadlink -f $1`
 	dst=$2
 	if [[ -e "$dst" ]] ; then
-		dst_link=`readlink -f $dst`
+		dst_link=`greadlink -f $dst`
 		if [[ "$src" == "$dst_link" ]] ; then
 			echo "	[INFO] Already installed"
 		else
@@ -19,7 +19,7 @@ function install(){
 		rm -f $dst
 		dir_dst=`dirname $dst`
 		mkdir -p $dir_dst
-		ln -s $src $dst
+		gln -s $src $dst
 	fi
 }
 

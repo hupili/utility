@@ -202,6 +202,11 @@ boostterminal() {
     rm -f ~/Library/Preferences/com.apple.terminal.plist
 }
 
+bury_copy() { 
+	# http://stackoverflow.com/questions/1529946/linux-copy-and-create-destination-dir-if-it-does-not-exist
+	mkdir -p `dirname $2` && cp "$1" "$2"; 
+}
+
 # If on MAC, we stick to the system default
 test $_mac || umask 0007
 
@@ -216,3 +221,5 @@ export DOCKER_TLS_VERIFY=1
 export DOCKER_HOST=tcp://192.168.59.103:2376
 
 #which rvm && rvm use 2.1.3
+
+test $HOME/.rvm/scripts/rvm && source $HOME/.rvm/scripts/rvm
