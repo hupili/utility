@@ -2,7 +2,7 @@
 
 # For coreutils
 
-src_dir="/usr/local/Cellar/coreutils/8.23_1/bin"
+src_dir="/usr/local/Cellar/coreutils/8.24/bin"
 
 dst_dir="bin/core-utils"
 

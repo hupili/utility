@@ -32,3 +32,7 @@ I'm highly accustomized to the Linux commands so I have to get them back:
 
 After the preparation, everything is just as Linux. 
 `deploy.sh` it!
+
+Note, may need to modify `mac/home-bin/gen.sh`
+to work with the latest version of brew-ed core-utils.
+
