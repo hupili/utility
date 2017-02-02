@@ -7,3 +7,7 @@
     df = diff --color
 [core]
     editor = /usr/bin/vim --noplugin -u /dev/null
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
