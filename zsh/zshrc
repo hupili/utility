@@ -213,6 +213,14 @@ bury_copy() {
 	mkdir -p `dirname $2` && cp "$1" "$2"; 
 }
 
+start_proxy(){
+	export ALL_PROXY=socks5://127.0.0.1:1080
+}
+
+end_proxy(){
+	unset ALL_PROXY
+}
+
 # If on MAC, we stick to the system default
 test $_mac || umask 0007
 
