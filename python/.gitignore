@@ -1,0 +1,15 @@
+# Prevent accidentally check-in computer specific virtual envs
+VirtualEnvs/*
+# Manually check-in hooking scripts for virtualenvwrapper
+!VirtualEnvs/get_env_details
+!VirtualEnvs/initialize
+!VirtualEnvs/postactivate
+!VirtualEnvs/postdeactivate
+!VirtualEnvs/postmkproject
+!VirtualEnvs/postmkvirtualenv
+!VirtualEnvs/postrmvirtualenv
+!VirtualEnvs/preactivate
+!VirtualEnvs/predeactivate
+!VirtualEnvs/premkproject
+!VirtualEnvs/premkvirtualenv
+!VirtualEnvs/prermvirtualenv
