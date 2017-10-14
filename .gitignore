@@ -1,3 +1,4 @@
 tmp
 linux/mycron/tmp.cron
 *~
+.DS_Store
