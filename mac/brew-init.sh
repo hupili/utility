@@ -1,13 +1,7 @@
 #!/bin/bash
 
-# Init cask
-brew tap homebrew/cask
-brew install brew-cask
-brew cask update
-
-brew tap homebrew/dupes
-
 # http://www.topbug.net/blog/2013/04/14/install-and-use-gnu-command-line-tools-in-mac-os-x/
+
 # 1. 
 brew install coreutils
 brew install binutils

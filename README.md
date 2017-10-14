@@ -24,7 +24,7 @@ I'm highly accustomized to the Linux commands so I have to get them back:
 
    * Install [HomeBrew](https://github.com/mxcl/homebrew).
    Remember to `brew doctor` and `brew update` before you proceed. 
-   * Install Linux core-utils: `brew install coreutils`
+   * Install Linux core-utils: `brew install coreutils` (or more verbosely init all suggested default brew tools from [mac/brew-init.sh](mac/brew-init.sh) )
    * Use GNU bins: `export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH`
 
 After the preparation, everything is just as Linux. 
