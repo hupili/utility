@@ -24,15 +24,19 @@ I'm highly accustomized to the Linux commands so I have to get them back:
 
    * Install [HomeBrew](https://github.com/mxcl/homebrew).
    Remember to `brew doctor` and `brew update` before you proceed. 
-   * Install Linux core-utils: `brew install coreutils`
-   * To not conflict MAC's commands, those Linux commands will be prefixed with a "g". 
-   You can find them in either `/usr/local/bin/guname`
-   or `../Cellar/coreutils/8.21/bin` (assume coreutils 8.21).
-   You should link them to a place in your `$PATH` using the name without "g" prefix. 
+   * Install Linux core-utils: `brew install coreutils` (or more verbosely init all suggested default brew tools from [mac/brew-init.sh](mac/brew-init.sh) )
+   * Use GNU bins: `export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH`
 
 After the preparation, everything is just as Linux. 
 `deploy.sh` it!
 
 Note, may need to modify `mac/home-bin/gen.sh`
 to work with the latest version of brew-ed core-utils.
+
+Check Errors
+------------
+
+Use `./deploy.sh | grep -i warning -B 3`
+to detect whether there is any problem
+
 
