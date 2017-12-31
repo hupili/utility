@@ -94,6 +94,7 @@ export VIRTUALENVWRAPPER_PYTHON="$HOME_BREW_PYTHON_PATH/python"
 plugins=(git brew pip sprunge urltools virtualenvwrapper)
 
 export PATH=$HOME/.local/bin:/usr/local/sbin:/usr/local/bin:$PATH
+
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -231,7 +232,7 @@ end_proxy(){
 # If on MAC, we stick to the system default
 test $_mac || umask 0007
 
-# Must be places behind the sourcing oh-my-zsh to take effect
+# Must be placed behind the sourcing oh-my-zsh to take effect
 # Or ls will be aliased to `ls -G`
 alias ls='ls --color'
 
@@ -250,4 +251,30 @@ test $HOME/.rvm/scripts/rvm && source $HOME/.rvm/scripts/rvm
 export ANDROID_HOME=/usr/local/opt/android-sdk
 
 alias lockscreen="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
+
+
+# Some bespoke dockerised commands
+
+
+function enter_docker_env(){
+	eval $(docker-machine env default)
+}
+
+function exec_dockerised_command(){
+	enter_docker_env
+	local image_name=$1
+	shift
+	local other_options=$1
+	shift
+	local container_workdir=$1
+	shift
+	full_command="docker run -v $(pwd):$container_workdir $other_options $image_name"
+	#local quoted_args=$(printf ' "%q"' "$@")
+	#echo $quoted_args
+	#eval $full_command $quoted_args
+	eval $full_command $@
+}
+
+alias mgcli="exec_dockerised_command hupili/mgcli '-v $HOME/.mgclirc:/root/.mgclirc --rm -it' /data"
+
 
