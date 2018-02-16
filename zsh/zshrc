@@ -275,6 +275,6 @@ function exec_dockerised_command(){
 	eval $full_command $@
 }
 
-alias mgcli="exec_dockerised_command hupili/mgcli '-v $HOME/.mgclirc:/root/.mgclirc --rm -it' /data"
+alias mgcli="exec_dockerised_command hupili/mgcli '-v $HOME/.mgcli/mgclirc:/root/.mgcli/mgclirc --rm -it' /data"
 alias pdftk="exec_dockerised_command mnuessler/pdftk '--rm -it' /work"
 
