@@ -276,5 +276,6 @@ function exec_dockerised_command(){
 }
 
 alias mgcli="exec_dockerised_command hupili/mgcli '-v $HOME/.mgcli/mgclirc:/root/.mgcli/mgclirc --rm -it' /data"
+alias wget2="exec_dockerised_command hupili/wget2 '--rm -it' /data"
 alias pdftk="exec_dockerised_command mnuessler/pdftk '--rm -it' /work"
 
