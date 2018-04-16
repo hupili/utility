@@ -268,11 +268,12 @@ function exec_dockerised_command(){
 	shift
 	local container_workdir=$1
 	shift
-	full_command="docker run -v $(pwd):$container_workdir $other_options $image_name"
+	full_command="docker run -v '$(pwd)':'$container_workdir' $other_options $image_name"
 	#local quoted_args=$(printf ' "%q"' "$@")
 	#echo $quoted_args
 	#eval $full_command $quoted_args
 	eval $full_command $@
+	#echo $full_command $@
 }
 
 alias mgcli="exec_dockerised_command hupili/mgcli '-v $HOME/.mgcli/mgclirc:/root/.mgcli/mgclirc --rm -it' /data"
