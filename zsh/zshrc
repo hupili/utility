@@ -268,10 +268,12 @@ function exec_dockerised_command(){
 	shift
 	local container_workdir=$1
 	shift
-	full_command="docker run -v $(pwd):$container_workdir $other_options $image_name"
+	full_command="docker run -v '$(pwd)':'$container_workdir' $other_options $image_name"
 	#local quoted_args=$(printf ' "%q"' "$@")
 	#echo $quoted_args
 	#eval $full_command $quoted_args
+	#echo $full_command
+	#echo $@
 	eval $full_command $@
 }
 
