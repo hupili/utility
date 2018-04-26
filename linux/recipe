@@ -4,3 +4,4 @@ enc-tar/tenc.sh-->$HOME/utils/tenc.sh
 misc/clear-tmp-file.sh-->$HOME/utils/clear-tmp-file
 email/send-attachment.sh-->$HOME/utils/send-attachment
 video-to-gif/video-to-gif.sh-->$HOME/utils/video-to-gif.sh
+images-to-single-pdf/images-to-single-pdf.sh-->$HOME/utils/images-to-single-pdf.sh

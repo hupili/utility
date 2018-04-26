@@ -275,6 +275,7 @@ function exec_dockerised_command(){
 	#echo $full_command
 	#echo $@
 	eval $full_command $@
+	#echo $full_command $@
 }
 
 alias mgcli="exec_dockerised_command hupili/mgcli '-v $HOME/.mgcli/mgclirc:/root/.mgcli/mgclirc --rm -it' /data"
