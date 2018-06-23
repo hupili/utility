@@ -92,6 +92,11 @@ alias gdw="git diff --color-words=. --word-diff-regex=$'[^\x80-\xBF][\x80-\xBF]*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 
+# VirtualEnv Wrapper
+export WORKON_HOME=~/VirtualEnvs
+#mkdir -p $WORKON_HOME
+#source /usr/local/bin/virtualenvwrapper.sh
+
 # The python path installed by homebrew
 export HOME_BREW_PYTHON_PATH="/usr/local/opt/python/libexec/bin"
 export VIRTUALENVWRAPPER_PYTHON="$HOME_BREW_PYTHON_PATH/python"
@@ -125,12 +130,6 @@ source $(brew --prefix nvm)/nvm.sh
 
 # Node modules
 export NODE_PATH=$NODE_PATH:$HOME/.npm/:/usr/local/lib/node_modules:/usr/local/share/npm/lib:/usr/local/share/npm/lib/node_modules
-
-# VirtualEnv Wrapper
-export WORKON_HOME=~/VirtualEnvs
-#mkdir -p $WORKON_HOME
-#source /usr/local/bin/virtualenvwrapper.sh
-#
 
 # TexLive
 export PATH="$PATH:/usr/local/texlive/2014/bin/x86_64-darwin"
@@ -277,11 +276,13 @@ function exec_dockerised_command(){
 	#local quoted_args=$(printf ' "%q"' "$@")
 	#echo $quoted_args
 	#eval $full_command $quoted_args
+	#echo $full_command
+	#echo $@
 	eval $full_command $@
 	#echo $full_command $@
 }
 
-alias mgcli="exec_dockerised_command hupili/mgcli '-v $HOME/.mgcli/mgclirc:/root/.mgcli/mgclirc --rm -it' /data"
+alias mgcli="exec_dockerised_command hupili/mgcli '-v $HOME/.mgcli/:/root/.mgcli/ --rm -it' /data"
 alias wget2="exec_dockerised_command hupili/wget2 '--rm -it' /data"
 alias pdftk="exec_dockerised_command mnuessler/pdftk '--rm -it' /work"
 
