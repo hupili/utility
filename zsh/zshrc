@@ -52,7 +52,7 @@ alias psg='ps aux | grep'
 
 # Git aliases
 # Git diff by words that works with Chinese (UTF-8)
-alias gdw="git diff --color-words=. --word-diff-regex=$'[^\x80-\xBF][\x80-\xBF]*'"
+alias gdwc="git diff --color-words=. --word-diff-regex=$'[^\x80-\xBF][\x80-\xBF]*'"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
