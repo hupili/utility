@@ -286,3 +286,4 @@ alias mgcli="exec_dockerised_command hupili/mgcli '-v $HOME/.mgcli/:/root/.mgcli
 alias wget2="exec_dockerised_command hupili/wget2 '--rm -it' /data"
 alias pdftk="exec_dockerised_command mnuessler/pdftk '--rm -it' /work"
 
+export PATH="/usr/local/opt/jpeg-turbo/bin:$PATH"
