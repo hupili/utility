@@ -3,11 +3,26 @@
 git submodule init
 git submodule update
 
+if [[ `uname -s` == "Darwin" ]] ; then
+	_mac=1
+	_unix=1
+fi
+if [[ `uname -s` == "Linux" ]] ; then
+	_linux=1
+fi
+
+echo "Deploy on system:"
+echo _mac $_mac
+echo _unix $_unix
+echo _linux $_linux
+
 function install(){
-	src=`greadlink -f $1`
+	test _mac && src=`greadlink -f $1`
+	test _linux && src=`readlink -f $1`
 	dst=$2
 	if [[ -e "$dst" ]] ; then
-		dst_link=`greadlink -f $dst`
+		test _mac && dst_link=`greadlink -f $dst`
+		test _linux && dst_link=`readlink -f $dst`
 		if [[ "$src" == "$dst_link" ]] ; then
 			echo "	[INFO] Already installed"
 		else
@@ -19,7 +34,8 @@ function install(){
 		rm -f $dst
 		dir_dst=`dirname $dst`
 		mkdir -p $dir_dst
-		gln -s $src $dst
+		test _mac && gln -s $src $dst
+		test _linux && ln -s $src $dst
 	fi
 }
 
