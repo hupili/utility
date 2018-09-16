@@ -17,12 +17,12 @@ echo _unix $_unix
 echo _linux $_linux
 
 function install(){
-	test _mac && src=`greadlink -f $1`
-	test _linux && src=`readlink -f $1`
+	test $_mac && src=`greadlink -f $1`
+	test $_linux && src=`readlink -f $1`
 	dst=$2
 	if [[ -e "$dst" ]] ; then
-		test _mac && dst_link=`greadlink -f $dst`
-		test _linux && dst_link=`readlink -f $dst`
+		test $_mac && dst_link=`greadlink -f $dst`
+		test $_linux && dst_link=`readlink -f $dst`
 		if [[ "$src" == "$dst_link" ]] ; then
 			echo "	[INFO] Already installed"
 		else
@@ -34,8 +34,8 @@ function install(){
 		rm -f $dst
 		dir_dst=`dirname $dst`
 		mkdir -p $dir_dst
-		test _mac && gln -s $src $dst
-		test _linux && ln -s $src $dst
+		test $_mac && gln -s $src $dst
+		test $_linux && ln -s $src $dst
 	fi
 }
 
