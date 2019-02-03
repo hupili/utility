@@ -24,14 +24,16 @@ I'm highly accustomized to the Linux commands so I have to get them back:
 
    * Install [HomeBrew](https://github.com/mxcl/homebrew).
    Remember to `brew doctor` and `brew update` before you proceed. 
-   * Install Linux core-utils: `brew install coreutils` (or more verbosely init all suggested default brew tools from [mac/brew-init.sh](mac/brew-init.sh) )
+   * Install Linux core-utils and zsh: `brew install coreutils zsh` (or more verbosely init all suggested default brew tools from [mac/brew-init.sh](mac/brew-init.sh) )
    * Use GNU bins: `export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH`
+   * Modify `mac/home-bin/gen.sh` to work with the latest version of brew-ed core-utils.
+   * Deploy the utilities: `deploy.sh` it!
+   * In System Preferences --> Accounts, find your user name and right click for "Advanced Options". Change the "Login shell" to `/usr/local/bin/zsh`
 
-After the preparation, everything is just as Linux. 
-`deploy.sh` it!
+Optional:
 
-Note, may need to modify `mac/home-bin/gen.sh`
-to work with the latest version of brew-ed core-utils.
+   * Checkout the `mac/` folder for more.
+   * Install the "IR Black Terminal" theme. Open Terminal, use commai+i to open the settings, choose the theme, right click, set default.
 
 Check Errors
 ------------
