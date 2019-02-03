@@ -41,3 +41,5 @@ brew install svn
 brew install unzip
 brew install vim
 brew install zsh
+# 4.
+brew install nvm
