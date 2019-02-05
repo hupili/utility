@@ -41,4 +41,7 @@ Check Errors
 Use `./deploy.sh | grep -i warning -B 3`
 to detect whether there is any problem
 
+Other MAC tips
+--------------
 
+* Make "option" (alt) to act as "meta" in the Terminal's preference, under keyboard panel. See more: https://stackoverflow.com/a/5542996
