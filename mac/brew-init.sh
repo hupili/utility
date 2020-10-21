@@ -43,3 +43,7 @@ brew install vim
 brew install zsh
 # 4.
 brew install nvm
+
+# 5.
+brew cask install karabiner-elements # keyboard modifier
+brew cask install spectacle # window manager
