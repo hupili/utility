@@ -29,6 +29,7 @@ I'm highly accustomized to the Linux commands so I have to get them back:
    * Modify `mac/home-bin/gen.sh` to work with the latest version of brew-ed core-utils.
    * Deploy the utilities: `deploy.sh` it!
    * In System Preferences --> Accounts, find your user name and right click for "Advanced Options". Change the "Login shell" to `/usr/local/bin/zsh`
+     * `chsh -s /bin/zsh`
 
 Optional:
 

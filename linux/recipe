@@ -6,3 +6,4 @@ email/send-attachment.sh-->$HOME/utils/send-attachment
 video-to-gif/video-to-gif.sh-->$HOME/utils/video-to-gif.sh
 txt2hex/txt2hex.sh-->$HOME/utils/txt2hex.sh
 images-to-single-pdf/images-to-single-pdf.sh-->$HOME/utils/images-to-single-pdf.sh
+video-edits/video-split.sh-->$HOME/utils/video-split.sh
