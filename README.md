@@ -26,7 +26,7 @@ I'm highly accustomized to the Linux commands so I have to get them back:
    Remember to `brew doctor` and `brew update` before you proceed. 
    * Install Linux core-utils and zsh: `brew install coreutils zsh` (or more verbosely init all suggested default brew tools from [mac/brew-init.sh](mac/brew-init.sh) )
    * Use GNU bins: `export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH`
-   * Modify `mac/home-bin/gen.sh` to work with the latest version of brew-ed core-utils.
+   * Modify `mac/home-bin/gen.sh` to work with the latest version of brew-ed core-utils (use `brew info coreutils` to lookup for version).
    * Deploy the utilities: `deploy.sh` it!
    * In System Preferences --> Accounts, find your user name and right click for "Advanced Options". Change the "Login shell" to `/usr/local/bin/zsh`
      * `chsh -s /bin/zsh`
