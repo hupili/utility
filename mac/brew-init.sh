@@ -18,7 +18,7 @@ brew install grep
 brew install gzip
 brew install screen
 brew install watch
-brew install wdiff --with-gettext
+brew install wdiff
 brew install wget
 # 2. 
 brew install bash
@@ -45,5 +45,5 @@ brew install zsh
 brew install nvm
 
 # 5.
-brew cask install karabiner-elements # keyboard modifier
-brew cask install spectacle # window manager
+brew install karabiner-elements # keyboard modifier
+brew install spectacle # window manager
