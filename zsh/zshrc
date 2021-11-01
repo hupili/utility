@@ -306,3 +306,6 @@ alias xlock="open -a ScreenSaverEngine"
 
 export PATH="/usr/local/opt/jpeg-turbo/bin:$PATH"
 
+source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
+source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
+
