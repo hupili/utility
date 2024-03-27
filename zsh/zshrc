@@ -102,15 +102,17 @@ alias gdwc="git diff --color-words=. --word-diff-regex=$'[^\x80-\xBF][\x80-\xBF]
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 
+# deprecated 2022
 # VirtualEnv Wrapper
-export WORKON_HOME=~/VirtualEnvs
+#export WORKON_HOME=~/VirtualEnvs
 #mkdir -p $WORKON_HOME
 #source /usr/local/bin/virtualenvwrapper.sh
+## The python path installed by homebrew
+#export HOME_BREW_PYTHON_PATH="/usr/local/opt/python/libexec/bin"
+#export VIRTUALENVWRAPPER_PYTHON="$HOME_BREW_PYTHON_PATH/python"
+#plugins=(git brew pip sprunge urltools virtualenvwrapper)
 
-# The python path installed by homebrew
-export HOME_BREW_PYTHON_PATH="/usr/local/opt/python/libexec/bin"
-export VIRTUALENVWRAPPER_PYTHON="$HOME_BREW_PYTHON_PATH/python"
-plugins=(git brew pip sprunge urltools virtualenvwrapper)
+plugins=(git brew pip sprunge urltools)
 
 export PATH=$HOME/.local/bin:/usr/local/sbin:/usr/local/bin:$PATH
 
@@ -257,15 +259,11 @@ test $_mac || umask 0007
 # Or ls will be aliased to `ls -G`
 alias ls='ls --color'
 
-# Configure docker client
-export DOCKER_CERT_PATH=/Users/hupili/.boot2docker/certs/boot2docker-vm
-export DOCKER_TLS_VERIFY=1
-# Check IP using cmd: boot2docker ip
-export DOCKER_HOST=tcp://192.168.59.103:2376
-
-# RVM disabled: 20190203
-#which rvm && rvm use 2.1.3
-# test $HOME/.rvm/scripts/rvm && source $HOME/.rvm/scripts/rvm
+## Configure docker client
+#export DOCKER_CERT_PATH=/Users/hupili/.boot2docker/certs/boot2docker-vm
+#export DOCKER_TLS_VERIFY=1
+## Check IP using cmd: boot2docker ip
+#export DOCKER_HOST=tcp://192.168.59.103:2376
 
 [[ -e $HOME/.personal-configurations.sh ]] && source $HOME/.personal-configurations.sh
 
@@ -307,8 +305,10 @@ alias xlock="open -a ScreenSaverEngine"
 
 export PATH="/usr/local/opt/jpeg-turbo/bin:$PATH"
 
-test $_mac && source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
-test $_mac && source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
+test $_mac && source $(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
+test $_mac && source $(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
 
 eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
+
+autoload -U +X bashcompinit && bashcompinit

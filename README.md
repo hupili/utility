@@ -28,7 +28,7 @@ I'm highly accustomized to the Linux commands so I have to get them back:
    * Use GNU bins: `export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH`
    * Modify `mac/home-bin/gen.sh` to work with the latest version of brew-ed core-utils (use `brew info coreutils` to lookup for version).
    * Deploy the utilities: `deploy.sh` it!
-   * In System Preferences --> Accounts, find your user name and right click for "Advanced Options". Change the "Login shell" to `/usr/local/bin/zsh`
+   * In System Preferences --> Accounts, find your user name and right click for "Advanced Options". Change the "Login shell" to path given by `which zsh` (not M1 MAC brew path is different from previous MAC)
      * `chsh -s /bin/zsh`
 
 Optional:
