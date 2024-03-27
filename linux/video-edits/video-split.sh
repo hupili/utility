@@ -15,6 +15,6 @@ echo $extension
 segment=$2
 total=$3
 
-seq 0 $segment $total | xargs -ISTART ffmpeg -y -i $fullfile  -ss START -t $segment $filename-START.$extension
+seq -f "%08g" 0 $segment $total | xargs -ISTART ffmpeg -y -i $fullfile  -ss START -t $segment $filename-START.$extension
 
 
