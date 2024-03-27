@@ -22,8 +22,9 @@ brew install wdiff
 brew install wget
 # 2. 
 brew install bash
-brew install emacs
-brew install gdb  # gdb requires further actions to make it work. See `brew info gdb`.
+#brew install emacs
+# not working on M1
+#brew install gdb  # gdb requires further actions to make it work. See `brew info gdb`.
 brew install gpatch
 brew install m4
 brew install make
@@ -47,3 +48,11 @@ brew install nvm
 # 5.
 brew install karabiner-elements # keyboard modifier
 brew install spectacle # window manager
+
+brew install ack
+brew install google-cloud-sdk
+brew install pyenv
+
+#6 image tools
+brew install schappim/ocr/ocr
+brew install eddieantonio/eddieantonio/imgcat
